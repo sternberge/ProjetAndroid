@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TableLayout style="@style/frag1TableLayout" >
+        <TableRow style="@style/frag1HeaderTableRow">
+            <TextView style="@style/frag1HeaderCol" android:text="Name"
+                android:inputType="none"
+                />
+
+        </TableRow>
+
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Total Number of Points"
+                android:inputType="none"/>
+            <TextView style="@style/frag1Col" android:text=""/>
+        </TableRow>
+
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="2 Points Shot"
+                android:inputType="none"/>
+            <TextView style="@style/frag1Col" android:text=""/>
+        </TableRow>
+
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="3 Points Shot"
+                android:inputType="none"/>
+            <TextView style="@style/frag1Col" android:text=""/>
+        </TableRow>
+
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Dunk"
+                android:inputType="none"/>
+            <TextView style="@style/frag1Col" android:text=""/>
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

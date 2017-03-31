@@ -5,67 +5,45 @@
     android:layout_height="match_parent">
 
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableRow
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView  android:text="Team A"/>
-            <TextView  android:text="Team B"/>
-
+    <TableLayout style="@style/frag1TableLayout" >
+        <TableRow style="@style/frag1HeaderTableRow">
+            <TextView style="@style/frag1HeaderCol" android:text="Team A"/>
+            <TextView style="@style/frag1HeaderCol" android:text="Team B"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        <TextView  android:text="Player 1"/>
-        <TextView  android:text="Player 1"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 1"/>
+            <TextView style="@style/frag1Col" android:text="Player 1"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        <TextView  android:text="Player 2"/>
-        <TextView  android:text="Player 2"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 2"/>
+            <TextView style="@style/frag1Col" android:text="Player 2"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        <TextView  android:text="Player 3"/>
-
-            <TextView  android:text="Player 3"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 3"/>
+            <TextView style="@style/frag1Col" android:text="Player 3"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView  android:text="Player 4"/>
-            <TextView  android:text="Player 4"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 4"/>
+            <TextView style="@style/frag1Col" android:text="Player 4"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView  android:text="Player 5"/>
-            <TextView  android:text="Player 5"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 5"/>
+            <TextView style="@style/frag1Col" android:text="Player 5"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <TextView  android:text="Player 6"/>
-            <TextView  android:text="Player 6"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 6"/>
+            <TextView style="@style/frag1Col" android:text="Player 6"/>
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"  >
-            <TextView  android:text="Player 7"/>
-            <TextView  android:text="Player 7"/>
+        <TableRow style="@style/frag1TableRow">
+            <TextView style="@style/frag1Col" android:text="Player 7"/>
+            <TextView style="@style/frag1Col" android:text="Player 7"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>
