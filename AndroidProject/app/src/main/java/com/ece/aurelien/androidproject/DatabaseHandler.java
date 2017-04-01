@@ -38,7 +38,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     PLAYER_FIRST_NAME + " TEXT NOT NULL, " +
                     PLAYER_NUMBER + " INTEGER, " +
                     PLAYER_TEAM_NAME + " TEXT PRIMARY KEY); "; //+
-                   // "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + ");";
+                   // "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ");";
 
 
     //Table Match
@@ -60,9 +60,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     MATCH_LOCATION_LATITUDE + " INTEGER, " +
                     MATCH_LOCATION_LONGITUDE + " INTEGER, " +
                     MATCH_ID + " INTEGER PRIMARY KEY, " +
-                    MATCH_DATE + " TEXT), " +
-                    "FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
-                    "FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
+                    MATCH_DATE + " TEXT, " +
+                    "FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
+                    "FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
 
 
     public DatabaseHandler(Context context) {

@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ece.aurelien.androidproject.Match.Match;
+import com.ece.aurelien.androidproject.Match.MatchDAO;
 import com.ece.aurelien.androidproject.Match.MatchView;
+import com.ece.aurelien.androidproject.Player.PlayerDAO;
+import com.ece.aurelien.androidproject.Team.TeamDAO;
 
 public class MainActivity extends AppCompatActivity {
     ImageView addMatchLogo;
@@ -46,8 +50,14 @@ public class MainActivity extends AppCompatActivity {
         matchTwoTeamOne = (TextView) findViewById(R.id.matchTwoTeamOne);
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
 
-       // MatchDAO matchDAO = new MatchDAO(this);
-        //matchDAO.open();
+        MatchDAO matchDAO = new MatchDAO(this);
+        matchDAO.open();
+
+        TeamDAO teamDAO = new TeamDAO(this);
+        teamDAO.open();
+
+        PlayerDAO playerDAO = new PlayerDAO(this);
+        playerDAO.open();
         //Match match1teamA = matchDAO.getTeamA();
         //matchTwoTeamOne.setText((CharSequence) match1teamA);
 
