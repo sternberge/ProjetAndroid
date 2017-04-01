@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ece.aurelien.androidproject.Match.MatchView;
+
 public class MainActivity extends AppCompatActivity {
     ImageView addMatchLogo;
     TextView matchAddInfo;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView matchFivePic,
             matchFiveTeamOne,
             matchFiveTeamTwo;
+
 
 
     @Override
@@ -43,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         matchTwoTeamOne = (TextView) findViewById(R.id.matchTwoTeamOne);
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
 
+       // MatchDAO matchDAO = new MatchDAO(this);
+        //matchDAO.open();
+        //Match match1teamA = matchDAO.getTeamA();
+        //matchTwoTeamOne.setText((CharSequence) match1teamA);
+
         matchThreePic = (TextView) findViewById(R.id.matchThreePic);
         matchThreeTeamOne = (TextView) findViewById(R.id.matchThreeTeamOne);
         matchThreeTeamTwo = (TextView) findViewById(R.id.matchThreeTeamTwo);
@@ -58,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void addMatch(){
-            Intent ret = new Intent(MainActivity.this, MainActivity.class);
+            Intent ret = new Intent(MainActivity.this, MatchView.class);
             startActivity(ret);
         }
 

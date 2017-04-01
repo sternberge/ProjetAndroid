@@ -1,11 +1,8 @@
 package com.ece.aurelien.androidproject;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.ece.aurelien.androidproject.Team.Team;
 
 /**
  * Created by Aurélien on 01/04/2017.
@@ -39,9 +36,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             "CREATE TABLE " + PLAYER_TABLE_NAME + " (" +
                     PLAYER_NAME + " TEXT NOT NULL, " +
                     PLAYER_FIRST_NAME + " TEXT NOT NULL, " +
-                    PLAYER_NUMBER + " INTEGER PRIMARY KEY, " +
-                    PLAYER_TEAM_NAME + " TEXT PRIMARY KEY), " +
-                    "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + ");";
+                    PLAYER_NUMBER + " INTEGER, " +
+                    PLAYER_TEAM_NAME + " TEXT PRIMARY KEY); "; //+
+                   // "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + ");";
 
 
     //Table Match

@@ -7,12 +7,16 @@
 
     <TableLayout style="@style/frag1TableLayout" >
         <TableRow style="@style/frag1HeaderTableRow">
+
             <TextView style="@style/frag1HeaderCol" android:text="Team A"/>
+
             <TextView style="@style/frag1HeaderCol" android:text="Team B"/>
         </TableRow>
 
         <TableRow style="@style/frag1TableRow">
+
             <TextView style="@style/frag1Col" android:text="Score 1"/>
+
             <TextView style="@style/frag1Col" android:text="Score 2"/>
         </TableRow>
 
