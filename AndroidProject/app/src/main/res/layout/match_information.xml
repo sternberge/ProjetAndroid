@@ -44,4 +44,11 @@
         tools:textStyle="bold"
         android:gravity="center" />
 
+    <Button
+        android:text="Save the Match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
 </LinearLayout>

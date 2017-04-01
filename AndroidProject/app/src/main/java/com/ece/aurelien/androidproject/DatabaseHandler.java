@@ -12,15 +12,19 @@ import com.ece.aurelien.androidproject.Team.Team;
  */
 
 public class DatabaseHandler extends SQLiteOpenHelper {
+    public static final String DATABASE_NAME = "database";
+
     //Table equipe
     public static final String TEAM_NAME = "name";
     public static final String TEAM_LOCATION = "location";
+    public static final String TEAM_CLASSEMENT = "classement";
 
     public static final String TEAM_TABLE_NAME = "Team";
 
     public static final String TEAM_TABLE_CREATE =
             "CREATE TABLE " + TEAM_TABLE_NAME + " (" +
                     TEAM_NAME + " TEXT PRIMARY KEY, " +
+                    TEAM_CLASSEMENT + " INTEGER, " +
                     TEAM_LOCATION + " TEXT NOT NULL);";
 
     //Table Player
@@ -64,8 +68,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     "FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES" + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
 
 
-    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DatabaseHandler(Context context) {
+        super(context, DATABASE_NAME, null, 1);
+    }
+
+    private static DatabaseHandler instance;
+
+    public static synchronized DatabaseHandler getHelper(Context context) {
+        if (instance == null)
+            instance = new DatabaseHandler(context);
+        return instance;
     }
 
     @Override
@@ -87,18 +99,4 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 
-    /*
- * Creating a Team
- */
-    public void createToDo(Team myTeam) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(TEAM_NAME, myTeam.getName());
-        values.put(TEAM_LOCATION, myTeam);
-
-        // insert row
-        db.insert(TEAM_TABLE_NAME, null, values);
-
-    }
 }
