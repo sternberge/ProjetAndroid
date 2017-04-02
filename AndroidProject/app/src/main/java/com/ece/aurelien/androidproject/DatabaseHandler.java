@@ -44,7 +44,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //Table Match
     public static final String MATCH_TEAM_A = "team_A";
     public static final String MATCH_TEAM_B = "team_B";
-    public static final String MATCH_RESULT = "result";
+    public static final String MATCH_RESULT_A = "result_A";
+    public static final String MATCH_RESULT_B = "result_B";
     public static final String MATCH_LOCATION_LATITUDE = "location_latitude";
     public static final String MATCH_LOCATION_LONGITUDE = "location_longitude";
     public static final String MATCH_DATE = "date_hour";
@@ -56,10 +57,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             "CREATE TABLE " + MATCH_TABLE_NAME + " (" +
                     MATCH_TEAM_A + " TEXT, " +
                     MATCH_TEAM_B + " TEXT, " +
-                    MATCH_RESULT + " INTEGER NOT NULL, " +
+                    MATCH_RESULT_A + " INTEGER NOT NULL, " +
+                    MATCH_RESULT_B + " INTEGER NOT NULL, " +
                     MATCH_LOCATION_LATITUDE + " INTEGER, " +
                     MATCH_LOCATION_LONGITUDE + " INTEGER, " +
-                    MATCH_ID + " INTEGER PRIMARY KEY, " +
+                    MATCH_ID + " INTEGER PRIMARY KEY AUTO INCREMENT, " +
                     MATCH_DATE + " TEXT, " +
                     "FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
                     "FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";

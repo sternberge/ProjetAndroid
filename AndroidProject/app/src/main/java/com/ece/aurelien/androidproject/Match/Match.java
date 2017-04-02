@@ -10,11 +10,36 @@ import android.os.Parcelable;
 public class Match implements Parcelable{
     private String teamA;
     private String teamB;
-    private int result;
+    private int resultA;
+    private int resultB;
     private double latitude;
     private double longitude;
     private String dateTime;
-    private int id;
+    //private int id;
+
+    public Match(){}
+
+    public Match (String teamAP, String teamBP, int resultAP, int resultBP, int latitudeP, int longitudeP, String dateTimeP){
+        this.teamA = teamAP;
+        this.teamB = teamBP;
+        this.resultA = resultAP;
+        this.resultB = resultBP;
+        this.latitude = latitudeP;
+        this.longitude = longitudeP;
+        this.dateTime = dateTimeP;
+    }
+
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+    }
 
     public String getTeamA() {
         return teamA;
@@ -32,12 +57,20 @@ public class Match implements Parcelable{
         this.teamB = teamB;
     }
 
-    public int getResult() {
-        return result;
+    public int getResultA() {
+        return resultA;
     }
 
-    public void setResult(int result) {
-        this.result = result;
+    public void setResultA(int resultA) {
+        this.resultA = resultA;
+    }
+
+    public int getResultB() {
+        return resultB;
+    }
+
+    public void setResultB(int resultB) {
+        this.resultB = resultB;
     }
 
     public double getLatitude() {
@@ -64,21 +97,11 @@ public class Match implements Parcelable{
         this.dateTime = dateTime;
     }
 
-    public int getId() {
+    /*public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-
-    }
+    }*/
 }
