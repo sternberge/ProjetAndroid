@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         TeamDAO teamDAO = new TeamDAO(this);
         teamDAO.open();
 
+
         PlayerDAO playerDAO = new PlayerDAO(this);
         playerDAO.open();
         //Match match1teamA = matchDAO.getTeamA();
