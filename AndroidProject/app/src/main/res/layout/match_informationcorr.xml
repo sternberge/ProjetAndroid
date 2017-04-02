@@ -48,8 +48,8 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:inputType="textPersonName"
-                android:text="Score A"
+                android:text="0"
+                android:inputType="number"
                 android:ems="10"
                 android:id="@+id/editText3"
                 android:layout_weight="1" />
@@ -57,8 +57,8 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:inputType="textPersonName"
-                android:text="Score B"
+                android:inputType="number"
+                android:text="0"
                 android:ems="10"
                 android:id="@+id/editText4"
                 android:layout_weight="1" />

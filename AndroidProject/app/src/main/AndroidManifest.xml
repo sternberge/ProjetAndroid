@@ -15,8 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Match.MatchView"></activity>
-        <activity android:name=".Team.TeamActivity"></activity>
+        <activity android:name=".Match.MatchView" />
+        <activity android:name=".Team.TeamActivity" />
+        <activity android:name=".Team.TeamsListActivity"></activity>
     </application>
 
 </manifest>

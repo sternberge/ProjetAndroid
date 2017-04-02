@@ -50,12 +50,12 @@ public class MatchView extends AppCompatActivity {
                                           matchDao.open();
                                           matchDao.createMatch(match);
                                           Toast.makeText(getBaseContext(),"Registration of the match success",Toast.LENGTH_LONG).show();
-                                          teamA.setText("");
-                                          teamB.setText("");
-                                          scoreA.setText("");
-                                          scoreB.setText("");
-                                          location.setText("");
-                                          date.setText("");
+                                          teamA.setText("Team A");
+                                          teamB.setText("Team B");
+                                          scoreA.setText("0");
+                                          scoreB.setText("0");
+                                          location.setText("Location");
+                                          date.setText("Date");
                                       }
                                   }
 
