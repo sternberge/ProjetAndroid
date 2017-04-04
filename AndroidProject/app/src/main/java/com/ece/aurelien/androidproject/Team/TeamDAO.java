@@ -67,7 +67,7 @@ public class TeamDAO {
         List<Team> teams = new ArrayList<Team>();
         Cursor cursor = mydb.query(DatabaseHandler.TEAM_TABLE_NAME,
                 new String[] { DatabaseHandler.TEAM_NAME,
-                        DatabaseHandler.TEAM_LOCATION}, null, null, null, null,
+                        DatabaseHandler.TEAM_LOCATION}, DatabaseHandler.TEAM_CLASSEMENT, null, null, null, null,
                 null);
 
         while (cursor.moveToNext()) {

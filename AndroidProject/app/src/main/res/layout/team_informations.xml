@@ -21,6 +21,14 @@
         android:ems="10"
         android:id="@+id/editText6" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Classement"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText9" />
+
     <Button
         android:text="Button"
         android:layout_width="match_parent"

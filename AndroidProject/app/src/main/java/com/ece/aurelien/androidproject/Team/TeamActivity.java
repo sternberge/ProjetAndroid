@@ -12,8 +12,9 @@ import com.ece.aurelien.androidproject.DatabaseHandler;
 import com.ece.aurelien.androidproject.R;
 
 public class TeamActivity extends AppCompatActivity {
-    EditText teamName, teamLocation;
+    EditText teamName, teamLocation, teamClassement;
     String teamStringName, teamStringLocation;
+    int teamIntClassement;
     Button myButton;
     Context context = this;
 
@@ -23,19 +24,22 @@ public class TeamActivity extends AppCompatActivity {
         setContentView(R.layout.team_informations);
         teamName = (EditText) findViewById(R.id.editText5);
         teamLocation = (EditText) findViewById(R.id.editText6);
+        teamClassement = (EditText) findViewById(R.id.editText9);
         myButton = (Button) findViewById(R.id.button2);
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 teamStringName = teamName.getText().toString();
                 teamStringLocation = teamLocation.getText().toString();
-                Team newTeam = new Team(teamStringName,teamStringLocation,0);
+                teamIntClassement = Integer.parseInt(teamClassement.getText().toString());
+                Team newTeam = new Team(teamStringName,teamStringLocation,teamIntClassement);
                 TeamDAO teamDAO = new TeamDAO(context);
                 teamDAO.open();
                 teamDAO.createTeam(newTeam);
                 Toast.makeText(getBaseContext(),"Registration of the team success",Toast.LENGTH_LONG).show();
                 teamName.setText("");
                 teamLocation.setText("");
+                teamClassement.setText("");
             }
         });
     }

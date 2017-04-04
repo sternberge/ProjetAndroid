@@ -8,6 +8,9 @@ import android.widget.ListView;
 
 import com.ece.aurelien.androidproject.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TeamsListActivity extends AppCompatActivity {
     ListView list;
     SQLiteDatabase sqLiteDatabase;
@@ -19,6 +22,10 @@ public class TeamsListActivity extends AppCompatActivity {
         setContentView(R.layout.teams_list_activity);
         list = (ListView) findViewById(R.id.list_view);
         teamDAO = new TeamDAO(getApplicationContext());
-        list = (ListView) teamDAO.getTeams();
+        List <Team> myTeams = new ArrayList<>();
+        myTeams = teamDAO.getTeams();
+
+        TeamAdapter adapter = new TeamAdapter(this,myTeams);
+        list.setAdapter(adapter);
     }
 }

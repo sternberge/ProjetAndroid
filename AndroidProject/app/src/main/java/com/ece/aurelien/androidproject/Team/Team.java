@@ -8,9 +8,9 @@ import android.os.Parcelable;
  */
 
 public class Team implements Parcelable{
-    private String name;
-    private String location;
-    private int classement;
+    private String name = null;
+    private String location = null;
+    private int classement = 0;
 
     public Team(){
 
