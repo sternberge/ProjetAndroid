@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ece.aurelien.androidproject.MainActivity;
@@ -27,6 +28,7 @@ public class MatchView extends AppCompatActivity {
     Spinner teamA,teamB;
     EditText scoreA,scoreB;
     EditText location;
+    TextView latitude, longitude;
     EditText date;
     Button button;
     Context context;
@@ -64,7 +66,8 @@ public class MatchView extends AppCompatActivity {
         teamB = (Spinner) findViewById(R.id.spinner2);
         scoreA = (EditText) findViewById(R.id.editText3);
         scoreB = (EditText) findViewById(R.id.editText4);
-        location = (EditText) findViewById(R.id.editText8);
+        latitude= (TextView) findViewById(R.id.textView3);
+        longitude= (TextView) findViewById(R.id.textView);
         date = (EditText) findViewById(R.id.editText7);
         button = (Button) findViewById(R.id.button5);
         button.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +78,8 @@ public class MatchView extends AppCompatActivity {
                                           int scoreAString = Integer.parseInt(scoreA.getText().toString());
                                           int scoreBString = Integer.parseInt(scoreB.getText().toString());
                                           String locationString = location.getText().toString();
+                                          String latitudeString= latitude.getText().toString();
+                                          String longitudeString= longitude.getText().toString();
                                           String dateString = date.getText().toString();
 
                                           // a modifier avec la latitude et longitude pour ggMaps et la date au bon format
@@ -86,7 +91,8 @@ public class MatchView extends AppCompatActivity {
 
                                           scoreA.setText("0");
                                           scoreB.setText("0");
-                                          location.setText("Location");
+                                          latitude.setText("");
+                                          longitude.setText("");
                                           date.setText("Date");
                                           Intent intent = new Intent(MatchView.this, MainActivity.class);
                                           startActivity(intent);
