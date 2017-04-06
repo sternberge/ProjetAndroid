@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ece.aurelien.androidproject.MainActivity;
+import com.ece.aurelien.androidproject.MapsActivity;
 import com.ece.aurelien.androidproject.R;
 import com.ece.aurelien.androidproject.Team.TeamDAO;
 
@@ -27,7 +28,7 @@ import java.util.List;
 public class MatchView extends AppCompatActivity {
     Spinner teamA,teamB;
     EditText scoreA,scoreB;
-    EditText location;
+    Button location;
     TextView latitude, longitude;
     EditText date;
     Button button;
@@ -70,6 +71,24 @@ public class MatchView extends AppCompatActivity {
         longitude= (TextView) findViewById(R.id.textView);
         date = (EditText) findViewById(R.id.editText7);
         button = (Button) findViewById(R.id.button5);
+        location = (Button) findViewById(R.id.textviewlocation);
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MatchView.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // handle here if we get back from map activity
+        Bundle data = getIntent().getExtras();
+        if (data!=null) {
+            String maplatitude = data.getString("maplatitude");
+            String maplongitude = data.getString("maplongitude");
+            latitude.setText(maplatitude);
+            longitude.setText(maplongitude);
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
