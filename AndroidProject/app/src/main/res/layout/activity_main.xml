@@ -58,7 +58,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="109dp"
+            android:layout_height="110dp"
             android:background="@android:drawable/alert_light_frame">
 
             <TextView
@@ -112,7 +112,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="102dp">
+            android:layout_height="102dp"
+            android:background="@android:drawable/alert_light_frame">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,19 +122,44 @@
                 android:gravity="center"
                 android:layout_weight="0.30" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/matchThreeTeamOne"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="117dp"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchThreeTeamOne"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchThreeScoreA" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="95dp"
                 android:layout_height="match_parent"
-                android:id="@+id/matchThreeTeamTwo"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:layout_weight="0.02">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchThreeTeamTwo"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchThreeScoreB" />
+            </LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
