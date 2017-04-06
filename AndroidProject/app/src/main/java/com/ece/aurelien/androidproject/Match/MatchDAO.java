@@ -7,7 +7,9 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.ece.aurelien.androidproject.DatabaseHandler;
-import com.ece.aurelien.androidproject.Team.Team;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_DATE;
 import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_LOCATION_LATITUDE;
@@ -17,10 +19,6 @@ import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_RESULT_B;
 import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_TABLE_NAME;
 import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_TEAM_A;
 import static com.ece.aurelien.androidproject.DatabaseHandler.MATCH_TEAM_B;
-import static com.ece.aurelien.androidproject.DatabaseHandler.TEAM_CLASSEMENT;
-import static com.ece.aurelien.androidproject.DatabaseHandler.TEAM_LOCATION;
-import static com.ece.aurelien.androidproject.DatabaseHandler.TEAM_NAME;
-import static com.ece.aurelien.androidproject.DatabaseHandler.TEAM_TABLE_NAME;
 
 /**
  * Created by Aurélien on 01/04/2017.
@@ -57,16 +55,31 @@ public class MatchDAO {
         dbHelper.close();
     }
 
-    public Match getTeamA(){
+    // getting a list of all match to show in mainactivity
+    public List<Match> getAllMatch() {
+        List<Match> match = new ArrayList<>();
+        Cursor cursor = database.query(DatabaseHandler.MATCH_TABLE_NAME,
+                new String[] { DatabaseHandler.MATCH_TEAM_A,
+                        DatabaseHandler.MATCH_TEAM_B,
+                        DatabaseHandler.MATCH_RESULT_A,
+                        DatabaseHandler.MATCH_RESULT_B,
+                        //// TODO: 06/04/2017 longitude latitude case 
+                        //DatabaseHandler.MATCH_LOCATION_LATITUDE,
+                        /*DatabaseHandler.MATCH_LOCATION_LONGITUDE*/}, DatabaseHandler.MATCH_ID, null, null, null, null,
+                null);
 
-        Cursor cursor = database.query(DatabaseHandler.MATCH_TABLE_NAME,allColumns,null,null,null,null,null,null);
-        cursor.moveToFirst();
-        Match match = new Match();
-        match.getTeamA();
-        cursor.close();
+        while (cursor.moveToNext()) {
+            Match myMatch = new Match();
+            myMatch.setTeamA(cursor.getString(0));
+            myMatch.setTeamB(cursor.getString(1));
+            myMatch.setResultA(cursor.getInt(2));
+            myMatch.setResultB(cursor.getInt(3));
+            //// TODO: 06/04/2017  latitude longitude case 
+            match.add(myMatch);
+        }
         return match;
     }
-
+    //
     /*
 * Creating a Match
 */

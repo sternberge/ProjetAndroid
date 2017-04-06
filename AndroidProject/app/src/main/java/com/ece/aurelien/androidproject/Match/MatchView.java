@@ -22,7 +22,7 @@ import java.util.List;
  */
 
 public class MatchView extends AppCompatActivity {
-    EditText teamA,teamB;
+    Spinner teamA,teamB;
     EditText scoreA,scoreB;
     EditText location;
     EditText date;
@@ -58,8 +58,8 @@ public class MatchView extends AppCompatActivity {
         dropmenu2.setAdapter(dataAdapter2);
         //
 
-        teamA = (EditText) findViewById(R.id.editText);
-        teamB = (EditText) findViewById(R.id.editText2);
+        teamA = (Spinner) findViewById(R.id.spinner);
+        teamB = (Spinner) findViewById(R.id.spinner2);
         scoreA = (EditText) findViewById(R.id.editText3);
         scoreB = (EditText) findViewById(R.id.editText4);
         location = (EditText) findViewById(R.id.editText8);
@@ -68,8 +68,8 @@ public class MatchView extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          String teamAString = teamA.getText().toString();
-                                          String teamBString = teamB.getText().toString();
+                                          String teamAString = teamA.getSelectedItem().toString();
+                                          String teamBString = teamB.getSelectedItem().toString();
                                           int scoreAString = Integer.parseInt(scoreA.getText().toString());
                                           int scoreBString = Integer.parseInt(scoreB.getText().toString());
                                           String locationString = location.getText().toString();
@@ -81,8 +81,7 @@ public class MatchView extends AppCompatActivity {
                                           matchDao.open();
                                           matchDao.createMatch(match);
                                           Toast.makeText(getBaseContext(),"Registration of the match success",Toast.LENGTH_LONG).show();
-                                          teamA.setText("Team A");
-                                          teamB.setText("Team B");
+
                                           scoreA.setText("0");
                                           scoreB.setText("0");
                                           location.setText("Location");

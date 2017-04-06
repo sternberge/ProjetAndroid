@@ -10,15 +10,17 @@ import android.widget.TextView;
 import com.ece.aurelien.androidproject.Match.Match;
 import com.ece.aurelien.androidproject.Match.MatchDAO;
 import com.ece.aurelien.androidproject.Match.MatchView;
-import com.ece.aurelien.androidproject.Player.PlayerDAO;
-import com.ece.aurelien.androidproject.Team.TeamDAO;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageView addMatchLogo;
     TextView matchAddInfo;
     TextView matchTwoPic,
             matchTwoTeamOne,
-            matchTwoTeamTwo;
+            matchTwoTeamTwo,
+            matchTwoScoreA,
+            matchTwoScoreB;
     TextView matchThreePic,
             matchThreeTeamOne,
             matchThreeTeamTwo;
@@ -36,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // VARIABLES
+
         addMatchLogo = (ImageView) findViewById(R.id.addMatchLogo);
         matchAddInfo = (TextView) findViewById(R.id.matchAddInfo);
+        // add a match
         addMatchLogo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 addMatch();
@@ -46,21 +49,12 @@ public class MainActivity extends AppCompatActivity {
         });
         matchAddInfo.setText(" < Ajoutez un match");
 
+
         matchTwoPic = (TextView) findViewById(R.id.matchTwoPic);
         matchTwoTeamOne = (TextView) findViewById(R.id.matchTwoTeamOne);
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
-
-        MatchDAO matchDAO = new MatchDAO(this);
-        matchDAO.open();
-
-        TeamDAO teamDAO = new TeamDAO(this);
-        teamDAO.open();
-
-
-        PlayerDAO playerDAO = new PlayerDAO(this);
-        playerDAO.open();
-        //Match match1teamA = matchDAO.getTeamA();
-        //matchTwoTeamOne.setText((CharSequence) match1teamA);
+        matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
+        matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
 
         matchThreePic = (TextView) findViewById(R.id.matchThreePic);
         matchThreeTeamOne = (TextView) findViewById(R.id.matchThreeTeamOne);
@@ -73,6 +67,41 @@ public class MainActivity extends AppCompatActivity {
         matchFivePic = (TextView) findViewById(R.id.matchFivePic);
         matchFiveTeamOne = (TextView) findViewById(R.id.matchFiveTeamOne);
         matchFiveTeamTwo = (TextView) findViewById(R.id.matchFiveTeamTwo);
+
+        // show match from database ( last from the list first)
+        MatchDAO matchDAO= new MatchDAO(getApplicationContext());
+        List<Match> myMatch =  matchDAO.getAllMatch();
+        int i=myMatch.size()-1;
+        if (i>=0) {
+            matchTwoTeamOne.setText(myMatch.get(i).getTeamA());
+            matchTwoTeamTwo.setText(myMatch.get(i).getTeamB());
+            matchTwoScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
+            matchTwoScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            i--;
+        }else {
+            matchTwoTeamOne.setText("Pas de match en BDD");
+        }
+        if (i>=0) {
+            matchThreeTeamOne.setText(myMatch.get(i).getTeamA());
+            matchThreeTeamTwo.setText(myMatch.get(i).getTeamB());
+            i--;
+        }else {
+            matchThreeTeamOne.setText("Pas de match en BDD");
+        }
+        if (i>=0) {
+            matchFourTeamOne.setText(myMatch.get(i).getTeamA());
+            matchFourTeamTwo.setText(myMatch.get(i).getTeamB());
+            i--;
+        }else {
+            matchFourTeamOne.setText("Pas de match en BDD");
+        }
+        if (i>=0) {
+            matchFiveTeamOne.setText(myMatch.get(i).getTeamA());
+            matchFiveTeamTwo.setText(myMatch.get(i).getTeamB());
+        }else {
+            matchFiveTeamOne.setText("Pas de match en BDD");
+        }
+        //
 
         }
 
