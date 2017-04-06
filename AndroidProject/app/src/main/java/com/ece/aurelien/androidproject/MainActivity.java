@@ -23,13 +23,19 @@ public class MainActivity extends AppCompatActivity {
             matchTwoScoreB;
     TextView matchThreePic,
             matchThreeTeamOne,
-            matchThreeTeamTwo;
+            matchThreeTeamTwo,
+            matchThreeScoreA,
+            matchThreeScoreB;
     TextView matchFourPic,
             matchFourTeamOne,
-            matchFourTeamTwo;
+            matchFourTeamTwo,
+            matchFourScoreA,
+            matchFourScoreB;
     TextView matchFivePic,
             matchFiveTeamOne,
-            matchFiveTeamTwo;
+            matchFiveTeamTwo,
+            matchFiveScoreA,
+            matchFiveScoreB;
 
 
 
@@ -43,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
         matchAddInfo = (TextView) findViewById(R.id.matchAddInfo);
         // add a match
         addMatchLogo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addMatch();
+            }
+        });
+        matchAddInfo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 addMatch();
             }
