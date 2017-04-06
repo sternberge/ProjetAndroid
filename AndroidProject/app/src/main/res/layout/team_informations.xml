@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         android:ems="10"
         android:id="@+id/editText5" />
 
@@ -17,20 +17,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Location"
+        android:hint="Location"
         android:ems="10"
         android:id="@+id/editText6" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Classement"
+        android:hint="Classement"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText9" />
 
     <Button
-        android:text="Button"
+        android:text="Save team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2" />

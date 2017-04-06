@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.ece.aurelien.androidproject.DatabaseHandler;
 
-import org.w3c.dom.Comment;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +60,17 @@ public class TeamDAO {
         return mydb.delete(DatabaseHandler.TEAM_TABLE_NAME,
                 DatabaseHandler.TEAM_NAME, new String[] { myTeam.getName() + "" });
     }
+    public List<String> getAllName(){
+        List<String> teamsName = new ArrayList<>();
+        Cursor cursor = mydb.query(DatabaseHandler.TEAM_TABLE_NAME,
+                new String[] { DatabaseHandler.TEAM_NAME}, DatabaseHandler.TEAM_CLASSEMENT, null, null, null, null,
+                null);
 
+        while (cursor.moveToNext()) {
+            teamsName.add(cursor.getString(0));
+        }
+        return teamsName;
+    }
     public List<Team> getTeams() {
         List<Team> teams = new ArrayList<Team>();
         Cursor cursor = mydb.query(DatabaseHandler.TEAM_TABLE_NAME,

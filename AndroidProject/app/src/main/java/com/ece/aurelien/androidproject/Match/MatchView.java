@@ -1,17 +1,21 @@
 package com.ece.aurelien.androidproject.Match;
 
 import android.content.Context;
-import android.icu.math.MathContext;
-import android.icu.util.Calendar;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ece.aurelien.androidproject.R;
+import com.ece.aurelien.androidproject.Team.TeamDAO;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by win8 on 01/04/2017.
@@ -26,7 +30,34 @@ public class MatchView extends AppCompatActivity {
     Context context;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.match_informationcorr);
+        setContentView(R.layout.match_informationtest);
+
+        //DropDown Menu TEAM A
+        Spinner dropmenu1;
+        SQLiteDatabase sqLiteDatabase;
+        TeamDAO teamDAO;
+        dropmenu1 = (Spinner) findViewById(R.id.spinner);
+        teamDAO = new TeamDAO(getApplicationContext());
+        List<String> teamsName = new ArrayList<>();
+        teamsName = teamDAO.getAllName();
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, teamsName);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropmenu1.setAdapter(dataAdapter);
+        //
+        //Dropdown menu team B
+        Spinner dropmenu2;
+        TeamDAO teamDAO2;
+        dropmenu2 = (Spinner) findViewById(R.id.spinner2);
+        teamDAO2 = new TeamDAO(getApplicationContext());
+        List<String> teamsName2 = new ArrayList<>();
+        teamsName2 = teamDAO2.getAllName();
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, teamsName2);
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropmenu2.setAdapter(dataAdapter2);
+        //
+
         teamA = (EditText) findViewById(R.id.editText);
         teamB = (EditText) findViewById(R.id.editText2);
         scoreA = (EditText) findViewById(R.id.editText3);
