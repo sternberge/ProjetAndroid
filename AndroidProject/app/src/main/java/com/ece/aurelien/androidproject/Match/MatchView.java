@@ -1,6 +1,7 @@
 package com.ece.aurelien.androidproject.Match;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.ece.aurelien.androidproject.MainActivity;
 import com.ece.aurelien.androidproject.R;
 import com.ece.aurelien.androidproject.Team.TeamDAO;
 
@@ -86,6 +88,8 @@ public class MatchView extends AppCompatActivity {
                                           scoreB.setText("0");
                                           location.setText("Location");
                                           date.setText("Date");
+                                          Intent intent = new Intent(MatchView.this, MainActivity.class);
+                                          startActivity(intent);
                                       }
                                   }
 

@@ -135,7 +135,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchThreeScoreA" />
             </LinearLayout>
 
@@ -155,7 +156,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchThreeScoreB" />
             </LinearLayout>
 
@@ -188,7 +190,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchFourScoreA" />
             </LinearLayout>
 
@@ -206,7 +209,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchFourScoreB" />
             </LinearLayout>
 
@@ -239,7 +243,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchFiveScoreA" />
             </LinearLayout>
 
@@ -258,7 +263,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
+                    android:gravity="center"
                     android:id="@+id/matchFiveScoreB" />
             </LinearLayout>
 

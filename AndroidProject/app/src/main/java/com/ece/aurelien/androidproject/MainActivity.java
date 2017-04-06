@@ -70,14 +70,20 @@ public class MainActivity extends AppCompatActivity {
         matchThreePic = (TextView) findViewById(R.id.matchThreePic);
         matchThreeTeamOne = (TextView) findViewById(R.id.matchThreeTeamOne);
         matchThreeTeamTwo = (TextView) findViewById(R.id.matchThreeTeamTwo);
+        matchThreeScoreA = (TextView) findViewById(R.id.matchThreeScoreA);
+        matchThreeScoreB = (TextView) findViewById(R.id.matchThreeScoreB);
 
         matchFourPic = (TextView) findViewById(R.id.matchFourPic);
         matchFourTeamOne = (TextView) findViewById(R.id.matchFourTeamOne);
         matchFourTeamTwo = (TextView) findViewById(R.id.matchFourTeamTwo);
+        matchFourScoreA = (TextView) findViewById(R.id.matchFourScoreA);
+        matchFourScoreB = (TextView) findViewById(R.id.matchFourScoreB);
 
         matchFivePic = (TextView) findViewById(R.id.matchFivePic);
         matchFiveTeamOne = (TextView) findViewById(R.id.matchFiveTeamOne);
         matchFiveTeamTwo = (TextView) findViewById(R.id.matchFiveTeamTwo);
+        matchFiveScoreA = (TextView) findViewById(R.id.matchFiveScoreA);
+        matchFiveScoreB = (TextView) findViewById(R.id.matchFiveScoreB);
 
         // show match from database ( last from the list first)
         MatchDAO matchDAO= new MatchDAO(getApplicationContext());
@@ -95,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         if (i>=0) {
             matchThreeTeamOne.setText(myMatch.get(i).getTeamA());
             matchThreeTeamTwo.setText(myMatch.get(i).getTeamB());
+            matchThreeScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
+            matchThreeScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
             i--;
         }else {
             matchThreeTeamOne.setText("Pas de match en BDD");
@@ -102,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
         if (i>=0) {
             matchFourTeamOne.setText(myMatch.get(i).getTeamA());
             matchFourTeamTwo.setText(myMatch.get(i).getTeamB());
+            matchFourScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
+            matchFourScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
             i--;
         }else {
             matchFourTeamOne.setText("Pas de match en BDD");
@@ -109,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
         if (i>=0) {
             matchFiveTeamOne.setText(myMatch.get(i).getTeamA());
             matchFiveTeamTwo.setText(myMatch.get(i).getTeamB());
+            matchFiveScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
+            matchFiveScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
         }else {
             matchFiveTeamOne.setText("Pas de match en BDD");
         }
