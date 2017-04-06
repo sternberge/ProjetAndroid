@@ -22,34 +22,33 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="104dp"
+            android:layout_height="57dp"
             android:background="@android:drawable/alert_light_frame">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="99dp"
+                android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:weightSum="1">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    android:id="@+id/textView2" />
+                    android:id="@+id/textView2"
+                    android:layout_height="5dp" />
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="58dp"
+                    android:layout_width="33dp"
+                    android:layout_height="24dp"
                     app:srcCompat="@drawable/plus"
                     android:id="@+id/addMatchLogo"
-                    android:layout_weight="0.30"/>
+                    android:scaleType="fitCenter" />
             </LinearLayout>
 
             <TextView
                 android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="88dp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
                 android:id="@+id/matchAddInfo"
-                android:layout_weight="0.60"
                 android:gravity="center"
                 android:textAlignment="textStart" />
 
@@ -58,8 +57,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@android:drawable/alert_light_frame">
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="108dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,8 +111,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@android:drawable/alert_light_frame">
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="108dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,7 +163,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="102dp">
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="108dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -173,24 +173,49 @@
                 android:gravity="center"
                 android:layout_weight="0.30" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="112dp"
                 android:layout_height="match_parent"
-                android:id="@+id/matchFourTeamOne"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:layout_weight="0.01">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/matchFourTeamTwo"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchFourTeamOne"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchFourScoreA" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="106dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchFourTeamTwo"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchFourScoreB" />
+            </LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="102dp">
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="110dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -199,19 +224,44 @@
                 android:gravity="center"
                 android:layout_weight="0.30" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="112dp"
                 android:layout_height="match_parent"
-                android:id="@+id/matchFiveTeamOne"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:layout_weight="0.01">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchFiveTeamOne"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchFiveScoreA" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:id="@+id/matchFiveTeamTwo"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:layout_weight="0.01">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/matchFiveTeamTwo"
+                    android:gravity="center"
+                    android:layout_weight="0.30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/matchFiveScoreB" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
