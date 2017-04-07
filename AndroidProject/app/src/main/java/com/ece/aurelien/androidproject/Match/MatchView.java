@@ -76,6 +76,10 @@ public class MatchView extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MatchView.this, MapsActivity.class);
+                intent.putExtra("teamA",String.valueOf(teamA.getSelectedItemPosition()));
+                intent.putExtra("teamB",String.valueOf(teamB.getSelectedItemPosition()));
+                intent.putExtra("scoreA",scoreA.getText().toString());
+                intent.putExtra("scoreB",scoreB.getText().toString());
                 startActivity(intent);
             }
         });
@@ -85,8 +89,16 @@ public class MatchView extends AppCompatActivity {
         if (data!=null) {
             String maplatitude = data.getString("maplatitude");
             String maplongitude = data.getString("maplongitude");
+            String teamABack = data.getString("teamABack");
+            String teamBBack = data.getString("teamBBack");
+            String scoreABack = data.getString("scoreABack");
+            String scoreBBack = data.getString("scoreBBack");
             latitude.setText(maplatitude);
             longitude.setText(maplongitude);
+            teamA.setSelection(Integer.parseInt(teamABack));
+            teamB.setSelection(Integer.parseInt(teamBBack));
+            scoreA.setText(scoreABack);
+            scoreB.setText(scoreBBack);
         }
 
         button.setOnClickListener(new View.OnClickListener() {

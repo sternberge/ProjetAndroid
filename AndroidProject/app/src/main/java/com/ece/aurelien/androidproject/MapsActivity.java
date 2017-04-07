@@ -23,10 +23,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private TextView latituteField;
     private TextView longitudeField;
     private Button savebutton;
+    private String teamA;
+    private String teamB;
+    private String scoreA;
+    private String scoreB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        // handle here if we come from maview activity
+        Bundle data = getIntent().getExtras();
+        if (data!=null) {
+            teamA = data.getString("teamA");
+            teamB = data.getString("teamB");
+            scoreA = data.getString("scoreA");
+            scoreB = data.getString("scoreB");
+
+        }
         latituteField = (TextView) findViewById(R.id.latitudeField);
         longitudeField = (TextView) findViewById(R.id.longitudeField);
         savebutton = (Button) findViewById(R.id.savebutton);
@@ -36,6 +50,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Intent intent = new Intent(MapsActivity.this, MatchView.class);
                 intent.putExtra("maplatitude",latituteField.getText());
                 intent.putExtra("maplongitude",longitudeField.getText());
+                intent.putExtra("teamABack",teamA);
+                intent.putExtra("teamBBack",teamB);
+                intent.putExtra("scoreABack",scoreA);
+                intent.putExtra("scoreBBack",scoreB);
                 startActivity(intent);
             }
         });
