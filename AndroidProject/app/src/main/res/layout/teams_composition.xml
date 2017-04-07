@@ -5,45 +5,89 @@
     android:layout_height="match_parent">
 
 
-    <TableLayout style="@style/frag1TableLayout" >
-        <TableRow style="@style/frag1HeaderTableRow">
-            <TextView style="@style/frag1HeaderCol" android:text="Team A"/>
-            <TextView style="@style/frag1HeaderCol" android:text="Team B"/>
-        </TableRow>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="214dp">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 1"/>
-            <TextView style="@style/frag1Col" android:text="Player 1"/>
-        </TableRow>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 2"/>
-            <TextView style="@style/frag1Col" android:text="Player 2"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/teamATag"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 3"/>
-            <TextView style="@style/frag1Col" android:text="Player 3"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/teamBTag"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 4"/>
-            <TextView style="@style/frag1Col" android:text="Player 4"/>
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 5"/>
-            <TextView style="@style/frag1Col" android:text="Player 5"/>
-        </TableRow>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:weightSum="1"
+            style="@style/defaultTextView">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 6"/>
-            <TextView style="@style/frag1Col" android:text="Player 6"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/player1"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 7"/>
-            <TextView style="@style/frag1Col" android:text="Player 7"/>
-        </TableRow>
-    </TableLayout>
+            <TextView
+                android:text="TextView"
+                android:layout_height="match_parent"
+                android:id="@+id/player2"
+                android:layout_width="191dp" />
+
+        </LinearLayout>
+
+        <TableLayout style="@style/frag1TableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="243dp">
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 2"/>
+                <TextView style="@style/frag1Col" android:text="Player 2"/>
+            </TableRow>
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 3"/>
+                <TextView style="@style/frag1Col" android:text="Player 3"/>
+            </TableRow>
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 4"/>
+                <TextView style="@style/frag1Col" android:text="Player 4"/>
+            </TableRow>
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 5"/>
+                <TextView style="@style/frag1Col" android:text="Player 5"/>
+            </TableRow>
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 6"/>
+                <TextView style="@style/frag1Col" android:text="Player 6"/>
+            </TableRow>
+
+            <TableRow style="@style/frag1TableRow">
+                <TextView style="@style/frag1Col" android:text="Player 7"/>
+                <TextView style="@style/frag1Col" android:text="Player 7"/>
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

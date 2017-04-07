@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         openteam1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, teamView.class);
+                intent.putExtra("teamASend",matchTwoTeamOne.getText());
+                intent.putExtra("teamBSend",matchTwoTeamTwo.getText());
                 startActivity(intent);
             }
         });
