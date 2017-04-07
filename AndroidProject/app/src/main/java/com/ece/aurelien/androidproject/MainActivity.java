@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
                     +"&zoom=3&size=80x80");
+
             i--;
         }else {
             matchFourTeamOne.setText("Pas de match en BDD");
@@ -167,18 +168,32 @@ public class MainActivity extends AppCompatActivity {
             matchFiveTeamTwo.setText(myMatch.get(i).getTeamB());
             matchFiveScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchFiveScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            final double latitude4 = myMatch.get(i).getLatitude();
+            final double longitude4 = myMatch.get(i).getLongitude();
             imgloc4.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
                     +"&zoom=3&size=80x80");
+            imgloc4.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, MapsActivityforMain.class);
+                    intent.putExtra("latitudeSee",String.valueOf(latitude4));
+                    intent.putExtra("longitudeSee",String.valueOf(longitude4));
+                    startActivity(intent);
+                    return false;
+                }
+            });
         }else {
             matchFiveTeamOne.setText("Pas de match en BDD");
         }
         //
 
         }
+        public void test(String latitude,String longitude){
 
+        }
         public void addMatch(){
             Intent ret = new Intent(MainActivity.this, MatchView.class);
             startActivity(ret);
