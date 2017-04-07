@@ -35,10 +35,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String PLAYER_TABLE_CREATE =
             "CREATE TABLE " + PLAYER_TABLE_NAME + " (" +
                     PLAYER_NAME + " TEXT NOT NULL, " +
-                    PLAYER_FIRST_NAME + " TEXT NOT NULL, " +
+                    PLAYER_FIRST_NAME + " TEXT PRIMARY KEY, " +
                     PLAYER_NUMBER + " INTEGER, " +
-                    PLAYER_TEAM_NAME + " TEXT PRIMARY KEY); "; //+
-                   // "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ");";
+                    PLAYER_TEAM_NAME + " TEXT NOT NULL ); " +
+                    "FOREIGN KEY(" + PLAYER_TEAM_NAME + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME +  ");";
 
 
     //Table Match

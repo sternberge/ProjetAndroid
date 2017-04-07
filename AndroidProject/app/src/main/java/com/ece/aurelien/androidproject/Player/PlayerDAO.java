@@ -14,8 +14,8 @@ import java.util.List;
 import static com.ece.aurelien.androidproject.DatabaseHandler.PLAYER_FIRST_NAME;
 import static com.ece.aurelien.androidproject.DatabaseHandler.PLAYER_NAME;
 import static com.ece.aurelien.androidproject.DatabaseHandler.PLAYER_NUMBER;
+import static com.ece.aurelien.androidproject.DatabaseHandler.PLAYER_TABLE_NAME;
 import static com.ece.aurelien.androidproject.DatabaseHandler.PLAYER_TEAM_NAME;
-import static com.ece.aurelien.androidproject.DatabaseHandler.TEAM_TABLE_NAME;
 
 /**
  * Created by Aurélien on 01/04/2017.
@@ -33,7 +33,7 @@ public class PlayerDAO {
     }
 
 
-    public void open() throws SQLException {
+    public  void open() throws SQLException {
         if(myDatabaseHandler == null)
             myDatabaseHandler = DatabaseHandler.getHelper(mContext);
         mydb = myDatabaseHandler.getWritableDatabase();
@@ -42,7 +42,7 @@ public class PlayerDAO {
     /*
 * Creating a Team
 */
-    public void createPlayer(Player myPlayer) {
+    public  void createPlayer(Player myPlayer) {
 
         ContentValues values = new ContentValues();
         values.put(PLAYER_NAME, myPlayer.getName());
@@ -51,7 +51,7 @@ public class PlayerDAO {
         values.put(PLAYER_TEAM_NAME, myPlayer.getTeamName());
 
         // insert row
-        this.mydb.insert(TEAM_TABLE_NAME, null, values);
+        this.mydb.insert(PLAYER_TABLE_NAME, null, values);
 
     }
     public int deletePlayer(Player myPlayer) {

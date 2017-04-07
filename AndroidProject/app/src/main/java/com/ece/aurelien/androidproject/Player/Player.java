@@ -12,6 +12,13 @@ public class Player implements Parcelable{
     private String firstName;
     private int number;
     private String teamName;
+    public Player(){}
+    public Player(String nameStr, String fnameStr, int numberInt,String teamName) {
+        this.name = nameStr;
+        this.firstName = fnameStr;
+        this.number = numberInt;
+        this.teamName = teamName;
+    }
 
     public String getName() {
         return name;

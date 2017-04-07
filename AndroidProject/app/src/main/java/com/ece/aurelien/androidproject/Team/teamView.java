@@ -1,10 +1,13 @@
 package com.ece.aurelien.androidproject.Team;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.ece.aurelien.androidproject.Player.Player;
+import com.ece.aurelien.androidproject.Player.PlayerActivity;
 import com.ece.aurelien.androidproject.Player.PlayerDAO;
 import com.ece.aurelien.androidproject.R;
 
@@ -24,7 +27,7 @@ public class teamView extends AppCompatActivity {
         TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
         PlayerDAO playerDAO;
         Bundle data = getIntent().getExtras();
-        if (data!=null) {
+        if (data!= null) {
             teamA = data.getString("teamASend");
             teamB = data.getString("teamBSend");
         }
@@ -62,6 +65,19 @@ public class teamView extends AppCompatActivity {
                 player2Aview.setText(myPlayersA.get(1).getName());
             }else{ // 2 player.. etc
                 player2Aview.setText("ajouter joueur");
+                final String finalTeamA = teamA;
+                final String finalTeamAname = teamA;
+                final String finalTeamBname = teamB;
+                player2Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                        intent.putExtra("teamName", finalTeamA);
+                        intent.putExtra("teamNameA", finalTeamAname);
+                        intent.putExtra("teamNameB", finalTeamBname);
+                        startActivity(intent);
+                    }
+                });
             }
             if (myPlayersA.size()-1==2) {
                 player3Aview.setText(myPlayersA.get(2).getName());
@@ -80,6 +96,19 @@ public class teamView extends AppCompatActivity {
             }
         }else{ // if no player at all
             player1Aview.setText("ajouter joueur");
+            final String finalTeamA = teamA;
+            final String finalTeamAname = teamA;
+            final String finalTeamBname = teamB;
+            player1Aview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                    intent.putExtra("teamName", finalTeamA);
+                    intent.putExtra("teamNameA", finalTeamAname);
+                    intent.putExtra("teamNameB", finalTeamBname);
+                    startActivity(intent);
+                }
+            });
             player2Aview.setText("ajouter joueur");
             player3Aview.setText("ajouter joueur");
             player4Aview.setText("ajouter joueur");
