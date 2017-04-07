@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/AddTeam"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_weight="0.10" />
 
     <LinearLayout
             android:orientation="horizontal"

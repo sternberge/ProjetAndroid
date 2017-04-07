@@ -66,7 +66,11 @@ public class teamView extends AppCompatActivity {
                  player1Aview.setText("ajouter joueur");
             }
             if (myPlayersA.size()-1==1) {
+                player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
+                player3Aview.setText("ajouter joueur");
+                player4Aview.setText("");
+                player5Aview.setText("");
             }else{ // 2 player.. etc
 
                 final String finalTeamA = teamA;
