@@ -63,7 +63,7 @@ public class MatchDAO {
                         DatabaseHandler.MATCH_TEAM_B,
                         DatabaseHandler.MATCH_RESULT_A,
                         DatabaseHandler.MATCH_RESULT_B,
-                        //// TODO: 06/04/2017 longitude latitude case 
+                        //// TODO: 06/04/2017 longitude latitude case
                         //DatabaseHandler.MATCH_LOCATION_LATITUDE,
                         /*DatabaseHandler.MATCH_LOCATION_LONGITUDE*/}, DatabaseHandler.MATCH_ID, null, null, null, null,
                 null);
@@ -74,7 +74,7 @@ public class MatchDAO {
             myMatch.setTeamB(cursor.getString(1));
             myMatch.setResultA(cursor.getInt(2));
             myMatch.setResultB(cursor.getInt(3));
-            //// TODO: 06/04/2017  latitude longitude case 
+            //// TODO: 06/04/2017  latitude longitude case
             match.add(myMatch);
         }
         return match;

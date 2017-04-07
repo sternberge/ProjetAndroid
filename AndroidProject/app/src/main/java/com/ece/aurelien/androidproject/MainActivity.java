@@ -1,9 +1,13 @@
 package com.ece.aurelien.androidproject;
 
 import android.content.Intent;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         addMatchLogo = (ImageView) findViewById(R.id.addMatchLogo);
         matchAddInfo = (TextView) findViewById(R.id.matchAddInfo);
         // add a match
@@ -61,11 +64,21 @@ public class MainActivity extends AppCompatActivity {
         matchAddInfo.setText(" < Ajoutez un match");
 
 
-        matchTwoPic = (TextView) findViewById(R.id.matchTwoPic);
+       // matchTwoPic = (TextView) findViewById(R.id.matchTwoPic);
         matchTwoTeamOne = (TextView) findViewById(R.id.matchTwoTeamOne);
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
         matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
         matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
+        //declaring webview here
+        WebView test = (WebView) findViewById(R.id.imgloc);
+        test.getSettings().setJavaScriptEnabled(true);
+        test.getSettings().setLoadWithOverviewMode(true);
+        test.getSettings().setUseWideViewPort(true);
+
+        //test.getSettings().setSupportZoom(false);
+        test.setWebViewClient(new SSLTolerantWebViewClient());
+
+
 
         matchThreePic = (TextView) findViewById(R.id.matchThreePic);
         matchThreeTeamOne = (TextView) findViewById(R.id.matchThreeTeamOne);
@@ -94,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             matchTwoTeamTwo.setText(myMatch.get(i).getTeamB());
             matchTwoScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchTwoScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            test.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="+String.valueOf(myMatch.get(i).getLatitude())+","+String.valueOf(myMatch.get(i).getLongitude())+"&zoom=14&size=80x80");
             i--;
         }else {
             matchTwoTeamOne.setText("Pas de match en BDD");
@@ -132,7 +146,11 @@ public class MainActivity extends AppCompatActivity {
             Intent ret = new Intent(MainActivity.this, MatchView.class);
             startActivity(ret);
         }
-
-
+        //handle ssl lock warning: not very safe but ok for this project
+        private class SSLTolerantWebViewClient extends WebViewClient{
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error){
+                handler.proceed();
+            }
+        }
 
     }

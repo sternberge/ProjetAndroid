@@ -60,12 +60,12 @@
             android:background="@android:drawable/alert_light_frame"
             android:layout_height="108dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <WebView
                 android:layout_height="match_parent"
-                android:id="@+id/matchTwoPic"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:id="@+id/imgloc"
+                android:layout_weight="0.01"
+                android:focusableInTouchMode="false"
+                android:layout_width="98dp" />
 
             <LinearLayout
                 android:orientation="vertical"
