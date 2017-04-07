@@ -21,7 +21,7 @@ public class teamView extends AppCompatActivity {
         setContentView(R.layout.teams_composition);
         String teamA = null;
         String teamB = null;
-        TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview;
+        TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
         PlayerDAO playerDAO;
         Bundle data = getIntent().getExtras();
         if (data!=null) {
@@ -39,35 +39,42 @@ public class teamView extends AppCompatActivity {
         player5Aview = (TextView) findViewById(R.id.player5A);
         //all player view team B
         player1Bview =(TextView) findViewById(R.id.player1B);
+        player2Bview =(TextView) findViewById(R.id.player2B);
+        player3Bview =(TextView) findViewById(R.id.player3B);
+        player4Bview =(TextView) findViewById(R.id.player4B);
+        player5Bview =(TextView) findViewById(R.id.player5B);
         teamAview.setText(teamA);
         teamBview.setText(teamB);
 
         playerDAO = new PlayerDAO(getApplicationContext());
-        List<Player> myPlayers = new ArrayList<>();
-        myPlayers = playerDAO.getPlayerByTeam(teamA);
-        if (myPlayers != null) {//pour team A
-            if (myPlayers.size()-1==0) {
-                player1Aview.setText(myPlayers.get(0).getName());
+        ////
+        // TEAM A HANDLING
+        /////
+        List<Player> myPlayersA = new ArrayList<>();
+        myPlayersA = playerDAO.getPlayerByTeam(teamA);
+        if (myPlayersA != null) {//pour team A
+            if (myPlayersA.size()-1==0) {
+                player1Aview.setText(myPlayersA.get(0).getName());
             }else { // if only one player
                  player1Aview.setText("ajouter joueur");
             }
-            if (myPlayers.size()-1==1) {
-                player2Aview.setText(myPlayers.get(1).getName());
+            if (myPlayersA.size()-1==1) {
+                player2Aview.setText(myPlayersA.get(1).getName());
             }else{ // 2 player.. etc
                 player2Aview.setText("ajouter joueur");
             }
-            if (myPlayers.size()-1==2) {
-                player3Aview.setText(myPlayers.get(2).getName());
+            if (myPlayersA.size()-1==2) {
+                player3Aview.setText(myPlayersA.get(2).getName());
             }else{
                 player3Aview.setText("ajouter joueur");
             }
-            if (myPlayers.size()-1==3) {
-                player4Aview.setText(myPlayers.get(3).getName());
+            if (myPlayersA.size()-1==3) {
+                player4Aview.setText(myPlayersA.get(3).getName());
             }else{
                 player4Aview.setText("ajouter joueur");
             }
-            if (myPlayers.size()-1==4) {
-                player5Aview.setText(myPlayers.get(4).getName());
+            if (myPlayersA.size()-1==4) {
+                player5Aview.setText(myPlayersA.get(4).getName());
             }else{
                 player5Aview.setText("ajouter joueur");
             }
@@ -78,5 +85,44 @@ public class teamView extends AppCompatActivity {
             player4Aview.setText("ajouter joueur");
             player5Aview.setText("ajouter joueur");
         }
+        ////
+        ///TEAM B HANDLING
+        ///
+        List<Player> myPlayersB = new ArrayList<>();
+        myPlayersB = playerDAO.getPlayerByTeam(teamA);
+        if (myPlayersB != null) {//pour team A
+            if (myPlayersB.size()-1==0) {
+                player1Bview.setText(myPlayersB.get(0).getName());
+            }else { // if only one player
+                player1Bview.setText("ajouter joueur");
+            }
+            if (myPlayersB.size()-1==1) {
+                player2Bview.setText(myPlayersB.get(1).getName());
+            }else{ // 2 player.. etc
+                player2Bview.setText("ajouter joueur");
+            }
+            if (myPlayersB.size()-1==2) {
+                player3Bview.setText(myPlayersB.get(2).getName());
+            }else{
+                player3Bview.setText("ajouter joueur");
+            }
+            if (myPlayersB.size()-1==3) {
+                player4Bview.setText(myPlayersB.get(3).getName());
+            }else{
+                player4Bview.setText("ajouter joueur");
+            }
+            if (myPlayersB.size()-1==4) {
+                player5Bview.setText(myPlayersB.get(4).getName());
+            }else{
+                player5Bview.setText("ajouter joueur");
+            }
+        }else{ // if no player at all
+            player1Bview.setText("ajouter joueur");
+            player2Bview.setText("ajouter joueur");
+            player3Bview.setText("ajouter joueur");
+            player4Bview.setText("ajouter joueur");
+            player5Bview.setText("ajouter joueur");
+        }
     }
+    
 }
