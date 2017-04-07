@@ -58,7 +58,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:background="@android:drawable/alert_light_frame"
-            android:layout_height="108dp">
+            android:layout_height="108dp"
+            android:id="@+id/openteam1">
 
             <WebView
                 android:layout_height="match_parent"

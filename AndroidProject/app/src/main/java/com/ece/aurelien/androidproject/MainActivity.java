@@ -9,11 +9,13 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ece.aurelien.androidproject.Match.Match;
 import com.ece.aurelien.androidproject.Match.MatchDAO;
 import com.ece.aurelien.androidproject.Match.MatchView;
+import com.ece.aurelien.androidproject.Team.teamView;
 
 import java.util.List;
 
@@ -69,7 +71,16 @@ public class MainActivity extends AppCompatActivity {
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
         matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
         matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
-        //declaring webview here
+        LinearLayout openteam1 = (LinearLayout) findViewById(R.id.openteam1);
+        openteam1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, teamView.class);
+                startActivity(intent);
+            }
+        });
+
+
+                //declaring webview here
         WebView imgloc = (WebView) findViewById(R.id.imgloc);
         imgloc.getSettings().setJavaScriptEnabled(true);
         imgloc.getSettings().setLoadWithOverviewMode(true);
