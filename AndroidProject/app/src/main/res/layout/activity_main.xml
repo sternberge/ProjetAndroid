@@ -63,7 +63,7 @@
             <WebView
                 android:layout_height="match_parent"
                 android:id="@+id/imgloc"
-                android:layout_weight="0.01"
+                android:layout_weight="0.05"
                 android:focusableInTouchMode="false"
                 android:layout_width="98dp" />
 
@@ -114,12 +114,12 @@
             android:background="@android:drawable/alert_light_frame"
             android:layout_height="108dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <WebView
                 android:layout_height="match_parent"
-                android:id="@+id/matchThreePic"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:id="@+id/imgloc2"
+                android:layout_weight="0.05"
+                android:focusableInTouchMode="false"
+                android:layout_width="98dp" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -168,12 +168,12 @@
             android:background="@android:drawable/alert_light_frame"
             android:layout_height="108dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <WebView
                 android:layout_height="match_parent"
-                android:id="@+id/matchFourPic"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:id="@+id/imgloc3"
+                android:layout_weight="0.05"
+                android:focusableInTouchMode="false"
+                android:layout_width="98dp" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -221,12 +221,12 @@
             android:background="@android:drawable/alert_light_frame"
             android:layout_height="110dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <WebView
                 android:layout_height="match_parent"
-                android:id="@+id/matchFivePic"
-                android:gravity="center"
-                android:layout_weight="0.30" />
+                android:id="@+id/imgloc4"
+                android:layout_weight="0.05"
+                android:focusableInTouchMode="false"
+                android:layout_width="98dp" />
 
             <LinearLayout
                 android:orientation="vertical"

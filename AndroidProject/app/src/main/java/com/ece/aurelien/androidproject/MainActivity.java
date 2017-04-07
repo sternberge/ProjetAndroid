@@ -70,29 +70,47 @@ public class MainActivity extends AppCompatActivity {
         matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
         matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
         //declaring webview here
-        WebView test = (WebView) findViewById(R.id.imgloc);
-        test.getSettings().setJavaScriptEnabled(true);
-        test.getSettings().setLoadWithOverviewMode(true);
-        test.getSettings().setUseWideViewPort(true);
+        WebView imgloc = (WebView) findViewById(R.id.imgloc);
+        imgloc.getSettings().setJavaScriptEnabled(true);
+        imgloc.getSettings().setLoadWithOverviewMode(true);
+        imgloc.getSettings().setUseWideViewPort(true);
 
-        //test.getSettings().setSupportZoom(false);
-        test.setWebViewClient(new SSLTolerantWebViewClient());
+        WebView imgloc2 = (WebView) findViewById(R.id.imgloc2);
+        imgloc2.getSettings().setJavaScriptEnabled(true);
+        imgloc2.getSettings().setLoadWithOverviewMode(true);
+        imgloc2.getSettings().setUseWideViewPort(true);
+
+        WebView imgloc3 = (WebView) findViewById(R.id.imgloc3);
+        imgloc3.getSettings().setJavaScriptEnabled(true);
+        imgloc3.getSettings().setLoadWithOverviewMode(true);
+        imgloc3.getSettings().setUseWideViewPort(true);
+
+        WebView imgloc4 = (WebView) findViewById(R.id.imgloc4);
+        imgloc4.getSettings().setJavaScriptEnabled(true);
+        imgloc4.getSettings().setLoadWithOverviewMode(true);
+        imgloc4.getSettings().setUseWideViewPort(true);
+        //authorizing;
+        imgloc.setWebViewClient(new SSLTolerantWebViewClient());
+        imgloc2.setWebViewClient(new SSLTolerantWebViewClient());
+        imgloc3.setWebViewClient(new SSLTolerantWebViewClient());
+        imgloc4.setWebViewClient(new SSLTolerantWebViewClient());
 
 
 
-        matchThreePic = (TextView) findViewById(R.id.matchThreePic);
+
+        //matchThreePic = (TextView) findViewById(R.id.matchThreePic);
         matchThreeTeamOne = (TextView) findViewById(R.id.matchThreeTeamOne);
         matchThreeTeamTwo = (TextView) findViewById(R.id.matchThreeTeamTwo);
         matchThreeScoreA = (TextView) findViewById(R.id.matchThreeScoreA);
         matchThreeScoreB = (TextView) findViewById(R.id.matchThreeScoreB);
 
-        matchFourPic = (TextView) findViewById(R.id.matchFourPic);
+        //matchFourPic = (TextView) findViewById(R.id.matchFourPic);
         matchFourTeamOne = (TextView) findViewById(R.id.matchFourTeamOne);
         matchFourTeamTwo = (TextView) findViewById(R.id.matchFourTeamTwo);
         matchFourScoreA = (TextView) findViewById(R.id.matchFourScoreA);
         matchFourScoreB = (TextView) findViewById(R.id.matchFourScoreB);
 
-        matchFivePic = (TextView) findViewById(R.id.matchFivePic);
+        //matchFivePic = (TextView) findViewById(R.id.matchFivePic);
         matchFiveTeamOne = (TextView) findViewById(R.id.matchFiveTeamOne);
         matchFiveTeamTwo = (TextView) findViewById(R.id.matchFiveTeamTwo);
         matchFiveScoreA = (TextView) findViewById(R.id.matchFiveScoreA);
@@ -107,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             matchTwoTeamTwo.setText(myMatch.get(i).getTeamB());
             matchTwoScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchTwoScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
-            test.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
+            imgloc.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
@@ -121,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
             matchThreeTeamTwo.setText(myMatch.get(i).getTeamB());
             matchThreeScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchThreeScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            imgloc2.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
+                    +String.valueOf(myMatch.get(i).getLatitude())
+                    +","
+                    +String.valueOf(myMatch.get(i).getLongitude())
+                    +"&zoom=3&size=80x80");
             i--;
         }else {
             matchThreeTeamOne.setText("Pas de match en BDD");
@@ -130,6 +153,11 @@ public class MainActivity extends AppCompatActivity {
             matchFourTeamTwo.setText(myMatch.get(i).getTeamB());
             matchFourScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchFourScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            imgloc3.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
+                    +String.valueOf(myMatch.get(i).getLatitude())
+                    +","
+                    +String.valueOf(myMatch.get(i).getLongitude())
+                    +"&zoom=3&size=80x80");
             i--;
         }else {
             matchFourTeamOne.setText("Pas de match en BDD");
@@ -139,6 +167,11 @@ public class MainActivity extends AppCompatActivity {
             matchFiveTeamTwo.setText(myMatch.get(i).getTeamB());
             matchFiveScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchFiveScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            imgloc4.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
+                    +String.valueOf(myMatch.get(i).getLatitude())
+                    +","
+                    +String.valueOf(myMatch.get(i).getLongitude())
+                    +"&zoom=3&size=80x80");
         }else {
             matchFiveTeamOne.setText("Pas de match en BDD");
         }
