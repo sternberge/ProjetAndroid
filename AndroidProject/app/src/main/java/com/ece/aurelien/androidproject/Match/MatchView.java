@@ -97,12 +97,12 @@ public class MatchView extends AppCompatActivity {
                                           int scoreAString = Integer.parseInt(scoreA.getText().toString());
                                           int scoreBString = Integer.parseInt(scoreB.getText().toString());
                                           String locationString = location.getText().toString();
-                                          String latitudeString= latitude.getText().toString();
-                                          String longitudeString= longitude.getText().toString();
+                                          double latitudeString= Double.valueOf(latitude.getText().toString());
+                                          double longitudeString= Double.valueOf(longitude.getText().toString());
                                           String dateString = date.getText().toString();
 
                                           // a modifier avec la latitude et longitude pour ggMaps et la date au bon format
-                                          Match match =  new Match(teamAString,teamBString,scoreAString,scoreBString,0,0,dateString);
+                                          Match match =  new Match(teamAString,teamBString,scoreAString,scoreBString,latitudeString,longitudeString,dateString);
                                           MatchDAO matchDao = new MatchDAO(context);
                                           matchDao.open();
                                           matchDao.createMatch(match);

@@ -19,7 +19,7 @@ public class Match implements Parcelable{
 
     public Match(){}
 
-    public Match (String teamAP, String teamBP, int resultAP, int resultBP, int latitudeP, int longitudeP, String dateTimeP){
+    public Match (String teamAP, String teamBP, int resultAP, int resultBP, double latitudeP, double longitudeP, String dateTimeP){
         this.teamA = teamAP;
         this.teamB = teamBP;
         this.resultA = resultAP;

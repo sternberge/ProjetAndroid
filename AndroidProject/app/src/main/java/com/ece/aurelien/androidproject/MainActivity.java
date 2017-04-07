@@ -107,7 +107,11 @@ public class MainActivity extends AppCompatActivity {
             matchTwoTeamTwo.setText(myMatch.get(i).getTeamB());
             matchTwoScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchTwoScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
-            test.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="+String.valueOf(myMatch.get(i).getLatitude())+","+String.valueOf(myMatch.get(i).getLongitude())+"&zoom=14&size=80x80");
+            test.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
+                    +String.valueOf(myMatch.get(i).getLatitude())
+                    +","
+                    +String.valueOf(myMatch.get(i).getLongitude())
+                    +"&zoom=3&size=80x80");
             i--;
         }else {
             matchTwoTeamOne.setText("Pas de match en BDD");

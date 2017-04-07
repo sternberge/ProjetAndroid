@@ -63,9 +63,8 @@ public class MatchDAO {
                         DatabaseHandler.MATCH_TEAM_B,
                         DatabaseHandler.MATCH_RESULT_A,
                         DatabaseHandler.MATCH_RESULT_B,
-                        //// TODO: 06/04/2017 longitude latitude case
-                        //DatabaseHandler.MATCH_LOCATION_LATITUDE,
-                        /*DatabaseHandler.MATCH_LOCATION_LONGITUDE*/}, DatabaseHandler.MATCH_ID, null, null, null, null,
+                        DatabaseHandler.MATCH_LOCATION_LATITUDE,
+                        DatabaseHandler.MATCH_LOCATION_LONGITUDE}, DatabaseHandler.MATCH_ID, null, null, null, null,
                 null);
 
         while (cursor.moveToNext()) {
@@ -74,7 +73,8 @@ public class MatchDAO {
             myMatch.setTeamB(cursor.getString(1));
             myMatch.setResultA(cursor.getInt(2));
             myMatch.setResultB(cursor.getInt(3));
-            //// TODO: 06/04/2017  latitude longitude case
+            myMatch.setLatitude(cursor.getDouble(4));
+            myMatch.setLongitude(cursor.getDouble(5));
             match.add(myMatch);
         }
         return match;
@@ -91,9 +91,9 @@ public class MatchDAO {
         values.put(MATCH_TEAM_B, myMatch.getTeamB());
         values.put(MATCH_RESULT_A, myMatch.getResultA());
         values.put(MATCH_RESULT_B, myMatch.getResultB());
+        values.put(MATCH_LOCATION_LATITUDE,myMatch.getLatitude());
+        values.put(MATCH_LOCATION_LONGITUDE,myMatch.getLongitude());
         // a modifier
-        values.put(MATCH_LOCATION_LATITUDE,0);
-        values.put(MATCH_LOCATION_LONGITUDE,0);
         values.put(MATCH_DATE, myMatch.getDateTime());
 
         // insert row

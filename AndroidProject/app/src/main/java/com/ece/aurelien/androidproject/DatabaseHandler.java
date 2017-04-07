@@ -59,8 +59,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     MATCH_TEAM_B + " TEXT, " +
                     MATCH_RESULT_A + " INTEGER NOT NULL, " +
                     MATCH_RESULT_B + " INTEGER NOT NULL, " +
-                    MATCH_LOCATION_LATITUDE + " INTEGER, " +
-                    MATCH_LOCATION_LONGITUDE + " INTEGER, " +
+                    MATCH_LOCATION_LATITUDE + " DOUBLE, " +
+                    MATCH_LOCATION_LONGITUDE + " DOUBLE, " +
                     MATCH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     MATCH_DATE + " TEXT, " +
                     "FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
