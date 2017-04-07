@@ -1,14 +1,15 @@
 package com.ece.aurelien.androidproject.Team;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ece.aurelien.androidproject.DatabaseHandler;
+import com.ece.aurelien.androidproject.Match.MatchView;
 import com.ece.aurelien.androidproject.R;
 
 public class TeamActivity extends AppCompatActivity {
@@ -40,6 +41,8 @@ public class TeamActivity extends AppCompatActivity {
                 teamName.setText("");
                 teamLocation.setText("");
                 teamClassement.setText("");
+                Intent intent = new Intent(TeamActivity.this,MatchView.class);
+                startActivity(intent);
             }
         });
     }

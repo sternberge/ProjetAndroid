@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.ece.aurelien.androidproject.MainActivity;
 import com.ece.aurelien.androidproject.MapsActivity;
 import com.ece.aurelien.androidproject.R;
+import com.ece.aurelien.androidproject.Team.TeamActivity;
 import com.ece.aurelien.androidproject.Team.TeamDAO;
 
 import java.util.ArrayList;
@@ -33,10 +34,19 @@ public class MatchView extends AppCompatActivity {
     EditText date;
     Button button;
     Context context;
+    TextView addTeamview;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match_informationtest);
 
+        addTeamview = (TextView) findViewById(R.id.AddTeam);
+        addTeamview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MatchView.this,TeamActivity.class);
+                startActivity(intent);
+            }
+        });
         //DropDown Menu TEAM A
         Spinner dropmenu1;
         SQLiteDatabase sqLiteDatabase;
