@@ -31,7 +31,7 @@ public class teamView extends AppCompatActivity {
             teamA = data.getString("teamASend");
             teamB = data.getString("teamBSend");
         }
-
+        //Toast.makeText(this, teamB, Toast.LENGTH_SHORT).show();
         teamAview = (TextView) findViewById(R.id.teamATag);
         teamBview = (TextView) findViewById(R.id.teamBTag);
         //all player view team A

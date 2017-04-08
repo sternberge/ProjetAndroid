@@ -71,15 +71,7 @@ public class MainActivity extends AppCompatActivity {
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
         matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
         matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
-        LinearLayout openteam1 = (LinearLayout) findViewById(R.id.openteam1);
-        openteam1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, teamView.class);
-                intent.putExtra("teamASend",matchTwoTeamOne.getText());
-                intent.putExtra("teamBSend",matchTwoTeamTwo.getText());
-                startActivity(intent);
-            }
-        });
+
 
 
                 //declaring webview here
@@ -155,6 +147,15 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }
             });
+            LinearLayout openteam1 = (LinearLayout) findViewById(R.id.openteam1);
+            openteam1.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, teamView.class);
+                    intent.putExtra("teamASend",matchTwoTeamOne.getText());
+                    intent.putExtra("teamBSend",matchTwoTeamTwo.getText());
+                    startActivity(intent);
+                }
+            });
             i--;
         }else {
             matchTwoTeamOne.setText("Pas de match en BDD");
@@ -179,6 +180,15 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("longitudeSee",String.valueOf(longitude));
                     startActivity(intent);
                     return false;
+                }
+            });
+            LinearLayout openteam2 = (LinearLayout) findViewById(R.id.openteam2);
+            openteam2.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, teamView.class);
+                    intent.putExtra("teamASend",matchThreeTeamOne.getText());
+                    intent.putExtra("teamBSend",matchThreeTeamTwo.getText());
+                    startActivity(intent);
                 }
             });
             i--;
@@ -207,6 +217,15 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }
             });
+            LinearLayout openteam3 = (LinearLayout) findViewById(R.id.openteam3);
+            openteam3.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, teamView.class);
+                    intent.putExtra("teamASend",matchFourTeamOne.getText());
+                    intent.putExtra("teamBSend",matchFourTeamTwo.getText());
+                    startActivity(intent);
+                }
+            });
             i--;
         }else {
             matchFourTeamOne.setText("Pas de match en BDD");
@@ -231,6 +250,15 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("longitudeSee",String.valueOf(longitude));
                     startActivity(intent);
                     return false;
+                }
+            });
+            LinearLayout openteam4 = (LinearLayout) findViewById(R.id.openteam4);
+            openteam4.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, teamView.class);
+                    intent.putExtra("teamASend",matchFiveTeamOne.getText());
+                    intent.putExtra("teamBSend",matchFiveTeamTwo.getText());
+                    startActivity(intent);
                 }
             });
         }else {
