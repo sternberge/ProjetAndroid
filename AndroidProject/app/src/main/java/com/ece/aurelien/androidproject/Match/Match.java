@@ -15,7 +15,7 @@ public class Match implements Parcelable{
     private double latitude;
     private double longitude;
     private String dateTime;
-    //private int id;
+    private int id;
 
     public Match(){}
 
@@ -97,11 +97,11 @@ public class Match implements Parcelable{
         this.dateTime = dateTime;
     }
 
-    /*public int getId() {
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }*/
+    }
 }

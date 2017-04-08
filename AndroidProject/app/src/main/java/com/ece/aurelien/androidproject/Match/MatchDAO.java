@@ -64,7 +64,8 @@ public class MatchDAO {
                         DatabaseHandler.MATCH_RESULT_A,
                         DatabaseHandler.MATCH_RESULT_B,
                         DatabaseHandler.MATCH_LOCATION_LATITUDE,
-                        DatabaseHandler.MATCH_LOCATION_LONGITUDE}, DatabaseHandler.MATCH_ID, null, null, null, null,
+                        DatabaseHandler.MATCH_LOCATION_LONGITUDE,
+                        DatabaseHandler.MATCH_ID}, DatabaseHandler.MATCH_ID, null, null, null, null,
                 null);
 
         while (cursor.moveToNext()) {
@@ -75,6 +76,7 @@ public class MatchDAO {
             myMatch.setResultB(cursor.getInt(3));
             myMatch.setLatitude(cursor.getDouble(4));
             myMatch.setLongitude(cursor.getDouble(5));
+            myMatch.setId(cursor.getInt(6));
             match.add(myMatch);
         }
         return match;

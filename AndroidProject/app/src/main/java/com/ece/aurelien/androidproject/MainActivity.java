@@ -148,11 +148,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             LinearLayout openteam1 = (LinearLayout) findViewById(R.id.openteam1);
+            final int currentMatch = myMatch.get(i).getId();
             openteam1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, teamView.class);
                     intent.putExtra("teamASend",matchTwoTeamOne.getText());
                     intent.putExtra("teamBSend",matchTwoTeamTwo.getText());
+                    intent.putExtra("matchID",String.valueOf(currentMatch));
                     startActivity(intent);
                 }
             });
@@ -183,11 +185,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             LinearLayout openteam2 = (LinearLayout) findViewById(R.id.openteam2);
+            final int currentMatch = myMatch.get(i).getId();
             openteam2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, teamView.class);
                     intent.putExtra("teamASend",matchThreeTeamOne.getText());
                     intent.putExtra("teamBSend",matchThreeTeamTwo.getText());
+                    intent.putExtra("matchID",String.valueOf(currentMatch));
                     startActivity(intent);
                 }
             });
@@ -218,11 +222,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             LinearLayout openteam3 = (LinearLayout) findViewById(R.id.openteam3);
+            final int currentMatch = myMatch.get(i).getId();
             openteam3.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, teamView.class);
                     intent.putExtra("teamASend",matchFourTeamOne.getText());
                     intent.putExtra("teamBSend",matchFourTeamTwo.getText());
+                    intent.putExtra("matchID",String.valueOf(currentMatch));
                     startActivity(intent);
                 }
             });
@@ -253,11 +259,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             LinearLayout openteam4 = (LinearLayout) findViewById(R.id.openteam4);
+            final int currentMatch = myMatch.get(i).getId();
             openteam4.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, teamView.class);
                     intent.putExtra("teamASend",matchFiveTeamOne.getText());
                     intent.putExtra("teamBSend",matchFiveTeamTwo.getText());
+                    intent.putExtra("matchID",String.valueOf(currentMatch));
                     startActivity(intent);
                 }
             });

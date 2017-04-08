@@ -25,12 +25,14 @@ public class teamView extends AppCompatActivity {
         setContentView(R.layout.teams_composition);
         String teamA = null;
         String teamB = null;
+        String matchID = null;
         final TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
         PlayerDAO playerDAO;
         Bundle data = getIntent().getExtras();
         if (data!= null) {
             teamA = data.getString("teamASend");
             teamB = data.getString("teamBSend");
+            matchID = data.getString("matchID");
         }
         //Toast.makeText(this, teamB, Toast.LENGTH_SHORT).show();
         teamAview = (TextView) findViewById(R.id.teamATag);
@@ -64,12 +66,14 @@ public class teamView extends AppCompatActivity {
                 player4Aview.setText("");
                 player5Aview.setText("");
                 final String finalTeamA1 = teamA;
+                final String finalMatchID = matchID;
                 player1Aview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", finalTeamA1);
                         intent.putExtra("playerName",player1Aview.getText() );
+                        intent.putExtra("matchID", finalMatchID);
                         startActivity(intent);
                     }
                 });
