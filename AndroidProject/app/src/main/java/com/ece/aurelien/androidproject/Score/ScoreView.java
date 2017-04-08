@@ -74,7 +74,7 @@ public class ScoreView extends AppCompatActivity {
             interceptionTV.setText(String.valueOf(myScore.get(0).getInterception()));
             minPlayTV.setText(String.valueOf(myScore.get(0).getMinuteplay()));
         }else{
-            dynamicView.setText("cliquer ici pour ajouter des stats");
+            dynamicView.setText(R.string.addStats);
             dynamicView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

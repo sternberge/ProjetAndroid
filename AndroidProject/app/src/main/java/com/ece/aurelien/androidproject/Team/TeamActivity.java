@@ -37,7 +37,7 @@ public class TeamActivity extends AppCompatActivity {
                 TeamDAO teamDAO = new TeamDAO(context);
                 teamDAO.open();
                 teamDAO.createTeam(newTeam);
-                Toast.makeText(getBaseContext(),"Registration of the team success",Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),R.string.teamSuccess,Toast.LENGTH_LONG).show();
                 teamName.setText("");
                 teamLocation.setText("");
                 teamClassement.setText("");
