@@ -72,6 +72,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player1Aview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -91,6 +93,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player2Aview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -123,6 +127,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player3Aview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -154,6 +160,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player4Aview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -184,6 +192,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player5Aview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -246,6 +256,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player1Bview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -264,6 +276,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player2Bview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -296,6 +310,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player3Bview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -327,6 +343,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player4Bview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
@@ -357,6 +375,8 @@ public class teamView extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
                         intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("teamAName", teamAview.getText());
+                        intent.putExtra("teamBName", teamBview.getText());
                         intent.putExtra("playerName",player5Bview.getText() );
                         intent.putExtra("matchID", matchID);
                         startActivity(intent);
