@@ -10,6 +10,7 @@ import com.ece.aurelien.androidproject.Player.Player;
 import com.ece.aurelien.androidproject.Player.PlayerActivity;
 import com.ece.aurelien.androidproject.Player.PlayerDAO;
 import com.ece.aurelien.androidproject.R;
+import com.ece.aurelien.androidproject.Score.ScoreView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,22 +57,22 @@ public class teamView extends AppCompatActivity {
         List<Player> myPlayersA = new ArrayList<>();
         myPlayersA = playerDAO.getPlayerByTeam(teamA);
         if (myPlayersA != null) {//pour team A
-            if (myPlayersA.size()-1==0) {
+            if (myPlayersA.size()-1>-1) {
                 player1Aview.setText(myPlayersA.get(0).getName());
                 player2Aview.setText("ajouter joueur");
                 player3Aview.setText("");
                 player4Aview.setText("");
                 player5Aview.setText("");
-                /*final String finalTeamA1 = teamA;
+                final String finalTeamA1 = teamA;
                 player1Aview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
-                        intent.putExtra("teamName", finalTeamA1);
-                        intent.putExtra("playerName",player1Aview.getText() );
+                        //intent.putExtra("teamName", finalTeamA1);
+                        //intent.putExtra("playerName",player1Aview.getText() );
                         startActivity(intent);
                     }
-                });*/
+                });
             }else { // if only one player
                  player1Aview.setText("ajouter joueur");
             }
@@ -189,7 +190,7 @@ public class teamView extends AppCompatActivity {
         List<Player> myPlayersB = new ArrayList<>();
         myPlayersB = playerDAO.getPlayerByTeam(teamB);
         if (myPlayersB != null) {//pour team B
-            if (myPlayersB.size()-1==0) {
+            if (myPlayersB.size()-1>-1) {
                 player1Bview.setText(myPlayersB.get(0).getName());
                 player2Bview.setText("ajouter joueur");
                 player3Bview.setText("");
