@@ -42,7 +42,7 @@ public class PlayerDAO {
     /*
 * Creating a Team
 */
-    public  void createPlayer(Player myPlayer) {
+    public  Boolean createPlayer(Player myPlayer){
 
         ContentValues values = new ContentValues();
         values.put(PLAYER_NAME, myPlayer.getName());
@@ -51,7 +51,13 @@ public class PlayerDAO {
         values.put(PLAYER_TEAM_NAME, myPlayer.getTeamName());
 
         // insert row
-        this.mydb.insert(PLAYER_TABLE_NAME, null, values);
+        long test = this.mydb.insert(PLAYER_TABLE_NAME, null, values);
+            if (test==-1){
+                return false;
+            }else {
+                return true;
+            }
+
 
     }
     public int deletePlayer(Player myPlayer) {
