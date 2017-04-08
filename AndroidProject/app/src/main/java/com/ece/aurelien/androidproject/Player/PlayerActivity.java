@@ -49,8 +49,14 @@ public class PlayerActivity extends AppCompatActivity  {
                 Player player = new Player(NameStr,FnameStr,NumberInt,team);
                 PlayerDAO playerDAO = new PlayerDAO(context);
                 playerDAO.open();
-                playerDAO.createPlayer(player);
-                Toast.makeText(getBaseContext(),"Registration of the player success",Toast.LENGTH_LONG).show();
+                if (playerDAO.createPlayer(player)) {
+                    //playerDAO.createPlayer(player);
+                    Toast.makeText(getBaseContext(), "Registration of the player success", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getBaseContext(),"Registration of the player error",Toast.LENGTH_LONG).show();
+                }
+
+
                 editNameview.setText("");
                 editFnameview.setText("");
                 editNumberview.setText("");
