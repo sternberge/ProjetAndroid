@@ -68,8 +68,8 @@ public class teamView extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
-                        //intent.putExtra("teamName", finalTeamA1);
-                        //intent.putExtra("playerName",player1Aview.getText() );
+                        intent.putExtra("teamName", finalTeamA1);
+                        intent.putExtra("playerName",player1Aview.getText() );
                         startActivity(intent);
                     }
                 });
