@@ -22,7 +22,7 @@ public class PlayerActivity extends AppCompatActivity  {
     String NameStr,FnameStr;
     int NumberInt;
     Button myButton;
-    String team,teamA,teamB;
+    String team,teamA,teamB,matchID;
     Context context = this;
 
     @Override
@@ -35,6 +35,7 @@ public class PlayerActivity extends AppCompatActivity  {
             team = data.getString("teamName");
             teamA = data.getString("teamNameA");
             teamB = data.getString("teamNameB");
+            matchID = data.getString("matchID");
         }
         editNameview = (EditText) findViewById(R.id.editName);
         editFnameview = (EditText) findViewById(R.id.editFname);
@@ -63,6 +64,7 @@ public class PlayerActivity extends AppCompatActivity  {
                 Intent intent = new Intent(PlayerActivity.this, teamView.class);
                 intent.putExtra("teamASend",teamA);
                 intent.putExtra("teamBSend",teamB);
+                intent.putExtra("matchID",matchID);
                 startActivity(intent);
             }
         });

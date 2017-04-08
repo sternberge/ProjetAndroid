@@ -20,12 +20,13 @@ import java.util.List;
  */
 
 public class teamView extends AppCompatActivity {
+    String matchID;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teams_composition);
         String teamA = null;
         String teamB = null;
-        String matchID = null;
+        //String matchID = null;
         final TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
         PlayerDAO playerDAO;
         Bundle data = getIntent().getExtras();
@@ -65,15 +66,14 @@ public class teamView extends AppCompatActivity {
                 player3Aview.setText("");
                 player4Aview.setText("");
                 player5Aview.setText("");
-                final String finalTeamA1 = teamA;
-                final String finalMatchID = matchID;
+                //final String finalMatchID = matchID;
                 player1Aview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(teamView.this,ScoreView.class);
-                        intent.putExtra("teamName", finalTeamA1);
+                        intent.putExtra("teamName", teamAview.getText());
                         intent.putExtra("playerName",player1Aview.getText() );
-                        intent.putExtra("matchID", finalMatchID);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -85,6 +85,17 @@ public class teamView extends AppCompatActivity {
                 player3Aview.setText("ajouter joueur");
                 player4Aview.setText("");
                 player5Aview.setText("");
+                //
+                player2Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("playerName",player2Aview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{ // 2 player.. etc
 
                 final String finalTeamA = teamA;
@@ -97,6 +108,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamA);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -105,6 +117,17 @@ public class teamView extends AppCompatActivity {
                 player3Aview.setText(myPlayersA.get(2).getName());
                 player4Aview.setText("ajouter joueur");
                 player5Aview.setText("");
+                //
+                player3Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("playerName",player3Aview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamA = teamA;
                 final String finalTeamAname = teamA;
@@ -116,6 +139,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamA);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -124,6 +148,17 @@ public class teamView extends AppCompatActivity {
             if (myPlayersA.size()-1>2) {
                 player4Aview.setText(myPlayersA.get(3).getName());
                 player5Aview.setText("ajouter joueur");
+                //
+                player4Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("playerName",player4Aview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamA = teamA;
                 final String finalTeamAname = teamA;
@@ -135,6 +170,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamA);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -142,6 +178,17 @@ public class teamView extends AppCompatActivity {
             }
             if (myPlayersA.size()-1>3) {
                 player5Aview.setText(myPlayersA.get(4).getName());
+                //
+                player5Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamAview.getText());
+                        intent.putExtra("playerName",player5Aview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamA = teamA;
                 final String finalTeamAname = teamA;
@@ -153,6 +200,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamA);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -170,6 +218,7 @@ public class teamView extends AppCompatActivity {
                     intent.putExtra("teamName", finalTeamA);
                     intent.putExtra("teamNameA", finalTeamAname);
                     intent.putExtra("teamNameB", finalTeamBname);
+                    intent.putExtra("matchID", matchID);
                     startActivity(intent);
                 }
             });
@@ -190,6 +239,18 @@ public class teamView extends AppCompatActivity {
                 player3Bview.setText("");
                 player4Bview.setText("");
                 player5Bview.setText("");
+                final String finalTeamB1 = teamB;
+                //final String finalMatchID = matchID;
+                player1Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("playerName",player1Bview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else { // if only one player
                 player1Bview.setText("ajouter joueur");
             }
@@ -198,6 +259,16 @@ public class teamView extends AppCompatActivity {
                 player3Bview.setText("ajouter joueur");
                 player4Bview.setText("");
                 player5Bview.setText("");
+                player2Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("playerName",player2Bview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{ // 2 player.. etc
 
                 final String finalTeamB = teamB;
@@ -210,6 +281,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamB);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -218,6 +290,17 @@ public class teamView extends AppCompatActivity {
                 player3Bview.setText(myPlayersB.get(2).getName());
                 player4Bview.setText("ajouter joueur");
                 player5Bview.setText("");
+                //
+                player3Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("playerName",player3Bview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamB = teamB;
                 final String finalTeamAname = teamA;
@@ -229,6 +312,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamB);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -237,6 +321,17 @@ public class teamView extends AppCompatActivity {
             if (myPlayersB.size()-1>2) {
                 player4Bview.setText(myPlayersB.get(3).getName());
                 player5Bview.setText("ajouter joueur");
+                //
+                player4Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("playerName",player4Bview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamB = teamB;
                 final String finalTeamAname = teamA;
@@ -248,6 +343,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamB);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -255,6 +351,17 @@ public class teamView extends AppCompatActivity {
             }
             if (myPlayersB.size()-1>3) {
                 player5Bview.setText(myPlayersB.get(4).getName());
+                //
+                player5Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", teamBview.getText());
+                        intent.putExtra("playerName",player5Bview.getText() );
+                        intent.putExtra("matchID", matchID);
+                        startActivity(intent);
+                    }
+                });
             }else{
                 final String finalTeamB = teamB;
                 final String finalTeamAname = teamA;
@@ -266,6 +373,7 @@ public class teamView extends AppCompatActivity {
                         intent.putExtra("teamName", finalTeamB);
                         intent.putExtra("teamNameA", finalTeamAname);
                         intent.putExtra("teamNameB", finalTeamBname);
+                        intent.putExtra("matchID", matchID);
                         startActivity(intent);
                     }
                 });
@@ -283,6 +391,7 @@ public class teamView extends AppCompatActivity {
                     intent.putExtra("teamName", finalTeamB);
                     intent.putExtra("teamNameA", finalTeamAname);
                     intent.putExtra("teamNameB", finalTeamBname);
+                    intent.putExtra("matchID", matchID);
                     startActivity(intent);
                 }
             });
