@@ -77,7 +77,6 @@ public class teamView extends AppCompatActivity {
                  player1Aview.setText("ajouter joueur");
             }
             if (myPlayersA.size()-1>0) {
-                player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText("ajouter joueur");
                 player4Aview.setText("");
@@ -99,8 +98,6 @@ public class teamView extends AppCompatActivity {
                 });
             }
             if (myPlayersA.size()-1>1) {
-                player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
-                player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText(myPlayersA.get(2).getName());
                 player4Aview.setText("ajouter joueur");
                 player5Aview.setText("");
@@ -121,9 +118,6 @@ public class teamView extends AppCompatActivity {
                 //player3Aview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
             }
             if (myPlayersA.size()-1>2) {
-                player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
-                player2Aview.setText(myPlayersA.get(1).getName());
-                player3Aview.setText(myPlayersA.get(2).getName());
                 player4Aview.setText(myPlayersA.get(3).getName());
                 player5Aview.setText("ajouter joueur");
             }else{
@@ -143,10 +137,6 @@ public class teamView extends AppCompatActivity {
                 //player4Aview.setText("ajouter joueur");
             }
             if (myPlayersA.size()-1>3) {
-                player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
-                player2Aview.setText(myPlayersA.get(1).getName());
-                player3Aview.setText(myPlayersA.get(2).getName());
-                player4Aview.setText(myPlayersA.get(3).getName());
                 player5Aview.setText(myPlayersA.get(4).getName());
             }else{
                 final String finalTeamA = teamA;
@@ -200,7 +190,6 @@ public class teamView extends AppCompatActivity {
                 player1Bview.setText("ajouter joueur");
             }
             if (myPlayersB.size()-1>0) {
-                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText("ajouter joueur");
                 player4Bview.setText("");
@@ -222,8 +211,6 @@ public class teamView extends AppCompatActivity {
                 });
             }
             if (myPlayersB.size()-1>1) {
-                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
-                player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText(myPlayersB.get(2).getName());
                 player4Bview.setText("ajouter joueur");
                 player5Bview.setText("");
@@ -244,9 +231,6 @@ public class teamView extends AppCompatActivity {
                 //player3Bview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
             }
             if (myPlayersB.size()-1>2) {
-                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
-                player2Bview.setText(myPlayersB.get(1).getName());
-                player3Bview.setText(myPlayersB.get(2).getName());
                 player4Bview.setText(myPlayersB.get(3).getName());
                 player5Bview.setText("ajouter joueur");
             }else{
@@ -266,10 +250,6 @@ public class teamView extends AppCompatActivity {
                 //player4Bview.setText("ajouter joueur");
             }
             if (myPlayersB.size()-1>3) {
-                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
-                player2Bview.setText(myPlayersB.get(1).getName());
-                player3Bview.setText(myPlayersB.get(2).getName());
-                player4Bview.setText(myPlayersB.get(3).getName());
                 player5Bview.setText(myPlayersB.get(4).getName());
             }else{
                 final String finalTeamB = teamB;
