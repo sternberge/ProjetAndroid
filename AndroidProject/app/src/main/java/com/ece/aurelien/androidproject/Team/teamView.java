@@ -62,7 +62,7 @@ public class teamView extends AppCompatActivity {
         if (myPlayersA != null) {//pour team A
             if (myPlayersA.size()-1>-1) {
                 player1Aview.setText(myPlayersA.get(0).getName());
-                player2Aview.setText("ajouter joueur");
+                player2Aview.setText(R.string.addPlayer);
                 player3Aview.setText("");
                 player4Aview.setText("");
                 player5Aview.setText("");
@@ -80,11 +80,11 @@ public class teamView extends AppCompatActivity {
                     }
                 });
             }else { // if only one player
-                 player1Aview.setText("ajouter joueur");
+                 player1Aview.setText(R.string.addPlayer);
             }
             if (myPlayersA.size()-1>0) {
                 player2Aview.setText(myPlayersA.get(1).getName());
-                player3Aview.setText("ajouter joueur");
+                player3Aview.setText(R.string.addPlayer);
                 player4Aview.setText("");
                 player5Aview.setText("");
                 //
@@ -119,7 +119,7 @@ public class teamView extends AppCompatActivity {
             }
             if (myPlayersA.size()-1>1) {
                 player3Aview.setText(myPlayersA.get(2).getName());
-                player4Aview.setText("ajouter joueur");
+                player4Aview.setText(R.string.addPlayer);
                 player5Aview.setText("");
                 //
                 player3Aview.setOnClickListener(new View.OnClickListener() {
@@ -149,11 +149,11 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player3Aview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
+                //player3Aview.setText(R.string.addPlayer); // send to if part //// TODO: 08/04/2017
             }
             if (myPlayersA.size()-1>2) {
                 player4Aview.setText(myPlayersA.get(3).getName());
-                player5Aview.setText("ajouter joueur");
+                player5Aview.setText(R.string.addPlayer);
                 //
                 player4Aview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -182,7 +182,7 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player4Aview.setText("ajouter joueur");
+                //player4Aview.setText(R.string.addPlayer);
             }
             if (myPlayersA.size()-1>3) {
                 player5Aview.setText(myPlayersA.get(4).getName());
@@ -214,10 +214,10 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player5Aview.setText("ajouter joueur");
+                //player5Aview.setText(R.string.addPlayer);
             }
         }else{ // if no player at all
-            player1Aview.setText("ajouter joueur");
+            player1Aview.setText(R.string.addPlayer);
             final String finalTeamA = teamA;
             final String finalTeamAname = teamA;
             final String finalTeamBname = teamB;
@@ -245,7 +245,7 @@ public class teamView extends AppCompatActivity {
         if (myPlayersB != null) {//pour team B
             if (myPlayersB.size()-1>-1) {
                 player1Bview.setText(myPlayersB.get(0).getName());
-                player2Bview.setText("ajouter joueur");
+                player2Bview.setText(R.string.addPlayer);
                 player3Bview.setText("");
                 player4Bview.setText("");
                 player5Bview.setText("");
@@ -264,11 +264,11 @@ public class teamView extends AppCompatActivity {
                     }
                 });
             }else { // if only one player
-                player1Bview.setText("ajouter joueur");
+                player1Bview.setText(R.string.addPlayer);
             }
             if (myPlayersB.size()-1>0) {
                 player2Bview.setText(myPlayersB.get(1).getName());
-                player3Bview.setText("ajouter joueur");
+                player3Bview.setText(R.string.addPlayer);
                 player4Bview.setText("");
                 player5Bview.setText("");
                 player2Bview.setOnClickListener(new View.OnClickListener() {
@@ -302,7 +302,7 @@ public class teamView extends AppCompatActivity {
             }
             if (myPlayersB.size()-1>1) {
                 player3Bview.setText(myPlayersB.get(2).getName());
-                player4Bview.setText("ajouter joueur");
+                player4Bview.setText(R.string.addPlayer);
                 player5Bview.setText("");
                 //
                 player3Bview.setOnClickListener(new View.OnClickListener() {
@@ -332,11 +332,11 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player3Bview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
+                //player3Bview.setText(R.string.addPlayer); // send to if part //// TODO: 08/04/2017
             }
             if (myPlayersB.size()-1>2) {
                 player4Bview.setText(myPlayersB.get(3).getName());
-                player5Bview.setText("ajouter joueur");
+                player5Bview.setText(R.string.addPlayer);
                 //
                 player4Bview.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -365,7 +365,7 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player4Bview.setText("ajouter joueur");
+                //player4Bview.setText(R.string.addPlayer);
             }
             if (myPlayersB.size()-1>3) {
                 player5Bview.setText(myPlayersB.get(4).getName());
@@ -397,10 +397,10 @@ public class teamView extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-                //player5Bview.setText("ajouter joueur");
+                //player5Bview.setText(R.string.addPlayer);
             }
         }else{ // if no player at all
-            player1Bview.setText("ajouter joueur");
+            player1Bview.setText(R.string.addPlayer);
             final String finalTeamB = teamB;
             final String finalTeamAname = teamA;
             final String finalTeamBname = teamB;

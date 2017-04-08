@@ -56,7 +56,7 @@ public class ScoreActivity extends AppCompatActivity {
                 ScoreDAO scoreDAO = new ScoreDAO(context);
                 scoreDAO.open();
                 scoreDAO.createScore(score);
-                Toast.makeText(getBaseContext(), "Registration of the score success", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), R.string.scoreSuccess, Toast.LENGTH_LONG).show();
 
 
                 pointET.setText("");

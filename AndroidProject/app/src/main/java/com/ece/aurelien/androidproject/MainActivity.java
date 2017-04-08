@@ -1,9 +1,11 @@
 package com.ece.aurelien.androidproject;
 
 import android.content.Intent;
+import android.hardware.SensorManager;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
@@ -11,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ece.aurelien.androidproject.Match.Match;
 import com.ece.aurelien.androidproject.Match.MatchDAO;
@@ -43,13 +46,24 @@ public class MainActivity extends AppCompatActivity {
             matchFiveScoreA,
             matchFiveScoreB;
 
-
+    OrientationEventListener myOrientationEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //handle rotation : none
+        myOrientationEventListener = new OrientationEventListener(this, SensorManager.SENSOR_DELAY_NORMAL) {
+            @Override
+            public void onOrientationChanged(int orientation) {
+
+                    Toast.makeText(MainActivity.this, orientation, Toast.LENGTH_SHORT).show();
+
+            }
+        };
+        //
         addMatchLogo = (ImageView) findViewById(R.id.addMatchLogo);
         matchAddInfo = (TextView) findViewById(R.id.matchAddInfo);
         // add a match
@@ -63,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 addMatch();
             }
         });
-        matchAddInfo.setText(" < Ajoutez un match");
+        matchAddInfo.setText(R.string.addMatch);
 
 
        // matchTwoPic = (TextView) findViewById(R.id.matchTwoPic);

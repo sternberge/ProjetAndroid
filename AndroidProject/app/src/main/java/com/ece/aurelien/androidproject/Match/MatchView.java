@@ -48,6 +48,7 @@ public class MatchView extends AppCompatActivity {
         setContentView(R.layout.match_informationtest);
 
         addTeamview = (TextView) findViewById(R.id.AddTeam);
+        addTeamview.setText(R.string.addTeam);
         addTeamview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,7 +159,7 @@ public class MatchView extends AppCompatActivity {
                                           MatchDAO matchDao = new MatchDAO(context);
                                           matchDao.open();
                                           matchDao.createMatch(match);
-                                          Toast.makeText(getBaseContext(),"Registration of the match success",Toast.LENGTH_LONG).show();
+                                          Toast.makeText(getBaseContext(),R.string.matchSuccess,Toast.LENGTH_LONG).show();
 
                                           scoreA.setText("0");
                                           scoreB.setText("0");

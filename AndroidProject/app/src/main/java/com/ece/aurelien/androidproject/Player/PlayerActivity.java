@@ -52,9 +52,9 @@ public class PlayerActivity extends AppCompatActivity  {
                 playerDAO.open();
                 if (playerDAO.createPlayer(player)) {
                     //playerDAO.createPlayer(player);
-                    Toast.makeText(getBaseContext(), "Registration of the player success", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), R.string.playerSuccess, Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getBaseContext(),"Registration of the player error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),R.string.playerError,Toast.LENGTH_LONG).show();
                 }
 
 

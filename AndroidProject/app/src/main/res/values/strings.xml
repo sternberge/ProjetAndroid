@@ -2,10 +2,30 @@
     <string name="app_name">Android Project</string>
     <string name="Mainview">Matchs</string>
     <string name="matchView">Add Match</string>
-    <string name="teamView">Equipes</string>
+    <string name="teamView">teams</string>
     <string name="scoreView">Scores</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps_activityfor_main">Map</string>
     <string name="google_maps_key">AIzaSyDz3GRDXVajLbMI7wTxbqkhKIrlYnOkI0M</string>
+
     <string name="title_activity_camera">Camera</string>
+
+
+    <string name="addMatch">Add a Match</string>
+    <string name="addPlayer"> Add a player</string>
+    <string name="addStats">Click here to add stats</string>
+    <string name="addTeam">Click here to add team or choose one below</string>
+
+    <string name="backbutton">back</string>
+    <string name="chooseDate">choose Date</string>
+    <string name="saveMatch">save Match</string>
+
+    <string name="teamSuccess">Registration of the team success</string>
+    <string name="scoreSuccess">Registration of the score success</string>
+    <string name="playerSuccess">Registration of the player success</string>
+    <string name="matchSuccess">Registration of the match success</string>
+
+    <string name="playerError">Registration of the player error</string>
+
+
 </resources>

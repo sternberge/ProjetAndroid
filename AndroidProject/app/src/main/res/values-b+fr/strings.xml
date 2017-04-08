@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Projet Android</string>
+    <string name="Mainview">Matchs</string>
+    <string name="matchView">Ajouter un Match</string>
+    <string name="teamView">Equipes</string>
+    <string name="scoreView">Scores</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps_activityfor_main">Map</string>
+    <string name="google_maps_key">AIzaSyDz3GRDXVajLbMI7wTxbqkhKIrlYnOkI0M</string>
+
+    <string name="addMatch">Ajouter un match</string>
+    <string name="addPlayer">Ajouter joueur</string>
+    <string name="addStats">Cliquer ici pour ajouter des stats</string>
+    <string name="addTeam">Cliquer ici pour ajouter un équipe ou choisissez-en une ci-dessous</string>
+
+    <string name="backButton">retour</string>
+    <string name="chooseDate">Choisir une date</string>
+
+    <string name="teamSuccess">"Equipe enregistrée avec succès"</string>
+    <string name="scoreSuccess">"Stats enregistrée avec succès"</string>
+    <string name="playerSuccess">"Joueur enregistré avec succès"</string>
+    <string name="matchSuccess">"Match enregistré avec succès"</string>
+
+    <string name="playerError">"Erreur lors de l'enregistrement du joueur"</string>
+
+</resources>
