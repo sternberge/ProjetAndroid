@@ -73,10 +73,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String SCORE_DECISIVE = "decisive";
     public static final String SCORE_REBOUND = "rebound";
     public static final String SCORE_COUNTER = "counter";
+    public static final String SCORE_INTERCEPTION = "interception";
     public static final String SCORE_MINPLAY = "minutePlay";
     public static final String SCORE_ID = "id";
 
-    public static final String SCORE_TABLE_NAME = "Match";
+    public static final String SCORE_TABLE_NAME = "Score";
 
     public static final String SCORE_TABLE_CREATE =
             "CREATE TABLE " + SCORE_TABLE_NAME + " (" +
@@ -86,6 +87,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     SCORE_DECISIVE + " INTEGER NOT NULL, " +
                     SCORE_REBOUND + " INTEGER NOT NULL, " +
                     SCORE_COUNTER + " INTEGER NOT NULL, " +
+                    SCORE_INTERCEPTION + " INTEGER NOT NULL, " +
                     SCORE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     SCORE_MINPLAY + " INTEGER NOT NULL) " ;//+
     //"FOREIGN KEY(" + SCORE_PLAYER + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
