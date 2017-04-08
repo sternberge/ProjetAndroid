@@ -6,7 +6,16 @@
     android:weightSum="1">
 
 
-        <LinearLayout
+    <TextView
+        android:text="Click here to add team or choose one below"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/AddTeam"
+        android:textSize="18sp"
+        android:layout_weight="0.10" />
+
+    <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="62dp"

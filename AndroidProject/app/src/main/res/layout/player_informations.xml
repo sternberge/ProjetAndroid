@@ -6,27 +6,73 @@
     android:weightSum="1">
 
 
-    <TableLayout style="@style/frag1TableLayout" >
-        <TableRow style="@style/frag1HeaderTableRow">
-            <TextView style="@style/frag1HeaderCol" android:text="Name"
-                android:inputType="none"
-                />
-            <TextView style="@style/frag1Col" android:text=""/>
-        </TableRow>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_weight="0.07">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="First Name"
-                android:inputType="none"/>
-            <TextView style="@style/frag1Col" android:text=""/>
-        </TableRow>
+        <TextView
+            android:text="Name :"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Number"
-                android:inputType="none"/>
-            <TextView style="@style/frag1Col" android:text=""/>
-        </TableRow>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/editName"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
 
-    </TableLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="84dp">
+
+        <TextView
+            android:text="First Name:"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView7"
+            android:layout_weight="0.77"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/editFname"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_weight="0.03">
+
+        <TextView
+            android:text="number :"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView9"
+            android:layout_weight="0.93"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/editNumber"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <Button
         android:text="Save Informations"

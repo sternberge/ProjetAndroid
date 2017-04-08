@@ -9,11 +9,13 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ece.aurelien.androidproject.Match.Match;
 import com.ece.aurelien.androidproject.Match.MatchDAO;
 import com.ece.aurelien.androidproject.Match.MatchView;
+import com.ece.aurelien.androidproject.Team.teamView;
 
 import java.util.List;
 
@@ -69,7 +71,18 @@ public class MainActivity extends AppCompatActivity {
         matchTwoTeamTwo = (TextView) findViewById(R.id.matchTwoTeamTwo);
         matchTwoScoreA = (TextView) findViewById(R.id.matchTwoScoreA);
         matchTwoScoreB = (TextView) findViewById(R.id.matchTwoScoreB);
-        //declaring webview here
+        LinearLayout openteam1 = (LinearLayout) findViewById(R.id.openteam1);
+        openteam1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, teamView.class);
+                intent.putExtra("teamASend",matchTwoTeamOne.getText());
+                intent.putExtra("teamBSend",matchTwoTeamTwo.getText());
+                startActivity(intent);
+            }
+        });
+
+
+                //declaring webview here
         WebView imgloc = (WebView) findViewById(R.id.imgloc);
         imgloc.getSettings().setJavaScriptEnabled(true);
         imgloc.getSettings().setLoadWithOverviewMode(true);
@@ -125,11 +138,23 @@ public class MainActivity extends AppCompatActivity {
             matchTwoTeamTwo.setText(myMatch.get(i).getTeamB());
             matchTwoScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchTwoScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            final double latitude = myMatch.get(i).getLatitude();
+            final double longitude = myMatch.get(i).getLongitude();
             imgloc.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
                     +"&zoom=3&size=80x80");
+            imgloc.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, MapsActivityforMain.class);
+                    intent.putExtra("latitudeSee",String.valueOf(latitude));
+                    intent.putExtra("longitudeSee",String.valueOf(longitude));
+                    startActivity(intent);
+                    return false;
+                }
+            });
             i--;
         }else {
             matchTwoTeamOne.setText("Pas de match en BDD");
@@ -139,11 +164,23 @@ public class MainActivity extends AppCompatActivity {
             matchThreeTeamTwo.setText(myMatch.get(i).getTeamB());
             matchThreeScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchThreeScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            final double latitude = myMatch.get(i).getLatitude();
+            final double longitude = myMatch.get(i).getLongitude();
             imgloc2.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
                     +"&zoom=3&size=80x80");
+            imgloc2.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, MapsActivityforMain.class);
+                    intent.putExtra("latitudeSee",String.valueOf(latitude));
+                    intent.putExtra("longitudeSee",String.valueOf(longitude));
+                    startActivity(intent);
+                    return false;
+                }
+            });
             i--;
         }else {
             matchThreeTeamOne.setText("Pas de match en BDD");
@@ -153,12 +190,23 @@ public class MainActivity extends AppCompatActivity {
             matchFourTeamTwo.setText(myMatch.get(i).getTeamB());
             matchFourScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchFourScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
+            final double latitude = myMatch.get(i).getLatitude();
+            final double longitude = myMatch.get(i).getLongitude();
             imgloc3.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
                     +String.valueOf(myMatch.get(i).getLongitude())
                     +"&zoom=3&size=80x80");
-
+            imgloc3.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, MapsActivityforMain.class);
+                    intent.putExtra("latitudeSee",String.valueOf(latitude));
+                    intent.putExtra("longitudeSee",String.valueOf(longitude));
+                    startActivity(intent);
+                    return false;
+                }
+            });
             i--;
         }else {
             matchFourTeamOne.setText("Pas de match en BDD");
@@ -168,8 +216,8 @@ public class MainActivity extends AppCompatActivity {
             matchFiveTeamTwo.setText(myMatch.get(i).getTeamB());
             matchFiveScoreA.setText(String.valueOf(myMatch.get(i).getResultA()));
             matchFiveScoreB.setText(String.valueOf(myMatch.get(i).getResultB()));
-            final double latitude4 = myMatch.get(i).getLatitude();
-            final double longitude4 = myMatch.get(i).getLongitude();
+            final double latitude = myMatch.get(i).getLatitude();
+            final double longitude = myMatch.get(i).getLongitude();
             imgloc4.loadUrl("http://maps.googleapis.com/maps/api/staticmap?center="
                     +String.valueOf(myMatch.get(i).getLatitude())
                     +","
@@ -179,8 +227,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public boolean onLongClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MapsActivityforMain.class);
-                    intent.putExtra("latitudeSee",String.valueOf(latitude4));
-                    intent.putExtra("longitudeSee",String.valueOf(longitude4));
+                    intent.putExtra("latitudeSee",String.valueOf(latitude));
+                    intent.putExtra("longitudeSee",String.valueOf(longitude));
                     startActivity(intent);
                     return false;
                 }

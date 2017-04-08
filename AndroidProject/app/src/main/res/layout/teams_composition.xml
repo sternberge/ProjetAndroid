@@ -5,45 +5,157 @@
     android:layout_height="match_parent">
 
 
-    <TableLayout style="@style/frag1TableLayout" >
-        <TableRow style="@style/frag1HeaderTableRow">
-            <TextView style="@style/frag1HeaderCol" android:text="Team A"/>
-            <TextView style="@style/frag1HeaderCol" android:text="Team B"/>
-        </TableRow>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 1"/>
-            <TextView style="@style/frag1Col" android:text="Player 1"/>
-        </TableRow>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@android:drawable/alert_light_frame">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 2"/>
-            <TextView style="@style/frag1Col" android:text="Player 2"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/teamATag"
+                android:gravity="center"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 3"/>
-            <TextView style="@style/frag1Col" android:text="Player 3"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/teamBTag"
+                android:gravity="center"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 4"/>
-            <TextView style="@style/frag1Col" android:text="Player 4"/>
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 5"/>
-            <TextView style="@style/frag1Col" android:text="Player 5"/>
-        </TableRow>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.15"
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="60dp">
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 6"/>
-            <TextView style="@style/frag1Col" android:text="Player 6"/>
-        </TableRow>
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player1A"
+                android:gravity="center"
+                android:layout_weight="1" />
 
-        <TableRow style="@style/frag1TableRow">
-            <TextView style="@style/frag1Col" android:text="Player 7"/>
-            <TextView style="@style/frag1Col" android:text="Player 7"/>
-        </TableRow>
-    </TableLayout>
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player1B"
+                android:gravity="center"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.15"
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player2A"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player2B"
+                android:gravity="center"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.15"
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player3A"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player3B"
+                android:gravity="center"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.13"
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player4A"
+                android:gravity="center"
+                android:layout_weight="0.91" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player4B"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@android:drawable/alert_light_frame"
+            android:layout_height="60dp"
+            android:layout_weight="0.12">
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player5A"
+                android:gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/player5B"
+                android:gravity="center"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

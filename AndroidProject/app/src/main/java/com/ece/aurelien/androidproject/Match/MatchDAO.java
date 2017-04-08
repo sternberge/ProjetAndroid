@@ -98,7 +98,6 @@ public class MatchDAO {
 
         // insert row
         this.database.insert(MATCH_TABLE_NAME, null, values);
-
     }
 
 }
