@@ -153,5 +153,12 @@
         android:id="@+id/button5"
         android:layout_weight="0.37" />
     </LinearLayout>
+
+    <Button
+        android:text="Take a Picture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button8"
+        android:layout_weight="0.10" />
 </LinearLayout>
 

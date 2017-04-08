@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ece.aurelien.androidproject.Camera.CameraActivity;
 import com.ece.aurelien.androidproject.DatePickerFragment;
 import com.ece.aurelien.androidproject.MainActivity;
 import com.ece.aurelien.androidproject.MapsActivity;
@@ -35,7 +36,7 @@ public class MatchView extends AppCompatActivity {
     TextView latitude, longitude;
     Button button;
     Button changeDate;
-
+    Button picture;
     Context context;
     TextView addTeamview;
     TextView dateOfTheMatch;
@@ -92,7 +93,7 @@ public class MatchView extends AppCompatActivity {
         longitude= (TextView) findViewById(R.id.textView);
         dateOfTheMatch = (TextView) findViewById(R.id.textView6);
         button = (Button) findViewById(R.id.button5);
-
+        picture = (Button) findViewById(R.id.button8);
         changeDate = (Button) findViewById(R.id.button4);
 
 
@@ -170,6 +171,14 @@ public class MatchView extends AppCompatActivity {
                                   }
 
         );
+
+        picture.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MatchView.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
