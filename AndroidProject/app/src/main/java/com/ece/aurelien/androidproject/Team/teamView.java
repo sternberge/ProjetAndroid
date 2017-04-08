@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.ece.aurelien.androidproject.MainActivity;
 import com.ece.aurelien.androidproject.Player.Player;
 import com.ece.aurelien.androidproject.Player.PlayerActivity;
 import com.ece.aurelien.androidproject.Player.PlayerDAO;
@@ -21,6 +23,7 @@ import java.util.List;
 
 public class teamView extends AppCompatActivity {
     String matchID;
+    Button myButton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teams_composition);
@@ -35,6 +38,14 @@ public class teamView extends AppCompatActivity {
             teamB = data.getString("teamBSend");
             matchID = data.getString("matchID");
         }
+        myButton = (Button) findViewById(R.id.button9);
+        myButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(teamView.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         //Toast.makeText(this, teamB, Toast.LENGTH_SHORT).show();
         teamAview = (TextView) findViewById(R.id.teamATag);
         teamBview = (TextView) findViewById(R.id.teamBTag);
