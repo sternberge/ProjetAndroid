@@ -1,5 +1,8 @@
 package com.ece.aurelien.androidproject.Match;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,11 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ece.aurelien.androidproject.DatePickerFragment;
 import com.ece.aurelien.androidproject.MainActivity;
 import com.ece.aurelien.androidproject.MapsActivity;
 import com.ece.aurelien.androidproject.R;
@@ -31,10 +36,15 @@ public class MatchView extends AppCompatActivity {
     EditText scoreA,scoreB;
     Button location;
     TextView latitude, longitude;
-    EditText date;
     Button button;
+    Button changeDate;
+
     Context context;
     TextView addTeamview;
+    TextView dateOfTheMatch;
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match_informationtest);
@@ -47,6 +57,8 @@ public class MatchView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         //DropDown Menu TEAM A
         Spinner dropmenu1;
         SQLiteDatabase sqLiteDatabase;
@@ -59,6 +71,8 @@ public class MatchView extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, teamsName);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropmenu1.setAdapter(dataAdapter);
+
+
         //
         //Dropdown menu team B
         Spinner dropmenu2;
@@ -79,9 +93,26 @@ public class MatchView extends AppCompatActivity {
         scoreB = (EditText) findViewById(R.id.editText4);
         latitude= (TextView) findViewById(R.id.textView3);
         longitude= (TextView) findViewById(R.id.textView);
-        date = (EditText) findViewById(R.id.editText7);
+        dateOfTheMatch = (TextView) findViewById(R.id.textView6);
         button = (Button) findViewById(R.id.button5);
+
+        changeDate = (Button) findViewById(R.id.button4);
+
+
+
+        changeDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+                    public void onClick(View v){
+            DialogFragment picker = new DatePickerFragment();
+            picker.show(getFragmentManager(), "datePicker");}
+        });
+
+
+
+
+
         location = (Button) findViewById(R.id.textviewlocation);
+
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +145,7 @@ public class MatchView extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
+
                                           String teamAString = teamA.getSelectedItem().toString();
                                           String teamBString = teamB.getSelectedItem().toString();
                                           int scoreAString = Integer.parseInt(scoreA.getText().toString());
@@ -121,7 +153,7 @@ public class MatchView extends AppCompatActivity {
                                           String locationString = location.getText().toString();
                                           double latitudeString= Double.valueOf(latitude.getText().toString());
                                           double longitudeString= Double.valueOf(longitude.getText().toString());
-                                          String dateString = date.getText().toString();
+                                          String dateString = dateOfTheMatch.getText().toString();
 
                                           // a modifier avec la latitude et longitude pour ggMaps et la date au bon format
                                           Match match =  new Match(teamAString,teamBString,scoreAString,scoreBString,latitudeString,longitudeString,dateString);
@@ -134,7 +166,7 @@ public class MatchView extends AppCompatActivity {
                                           scoreB.setText("0");
                                           latitude.setText("");
                                           longitude.setText("");
-                                          date.setText("Date");
+
                                           Intent intent = new Intent(MatchView.this, MainActivity.class);
                                           startActivity(intent);
                                       }
@@ -144,4 +176,5 @@ public class MatchView extends AppCompatActivity {
 
 
     }
+
 }
