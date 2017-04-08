@@ -178,34 +178,119 @@ public class teamView extends AppCompatActivity {
         ///
         List<Player> myPlayersB = new ArrayList<>();
         myPlayersB = playerDAO.getPlayerByTeam(teamB);
-        if (myPlayersB != null) {//pour team A
+        if (myPlayersB != null) {//pour team B
             if (myPlayersB.size()-1==0) {
                 player1Bview.setText(myPlayersB.get(0).getName());
+                player2Bview.setText("ajouter joueur");
+                player3Bview.setText("");
+                player4Bview.setText("");
+                player5Bview.setText("");
             }else { // if only one player
                 player1Bview.setText("ajouter joueur");
             }
             if (myPlayersB.size()-1==1) {
+                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
+                player3Bview.setText("ajouter joueur");
+                player4Bview.setText("");
+                player5Bview.setText("");
             }else{ // 2 player.. etc
-                player2Bview.setText("ajouter joueur");
+
+                final String finalTeamB = teamB;
+                final String finalTeamAname = teamA;
+                final String finalTeamBname = teamB;
+                player2Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                        intent.putExtra("teamName", finalTeamB);
+                        intent.putExtra("teamNameA", finalTeamAname);
+                        intent.putExtra("teamNameB", finalTeamBname);
+                        startActivity(intent);
+                    }
+                });
             }
             if (myPlayersB.size()-1==2) {
+                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
+                player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText(myPlayersB.get(2).getName());
+                player4Bview.setText("ajouter joueur");
+                player5Bview.setText("");
             }else{
-                player3Bview.setText("ajouter joueur");
+                final String finalTeamB = teamB;
+                final String finalTeamAname = teamA;
+                final String finalTeamBname = teamB;
+                player3Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                        intent.putExtra("teamName", finalTeamB);
+                        intent.putExtra("teamNameA", finalTeamAname);
+                        intent.putExtra("teamNameB", finalTeamBname);
+                        startActivity(intent);
+                    }
+                });
+                //player3Bview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
             }
             if (myPlayersB.size()-1==3) {
+                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
+                player2Bview.setText(myPlayersB.get(1).getName());
+                player3Bview.setText(myPlayersB.get(2).getName());
                 player4Bview.setText(myPlayersB.get(3).getName());
+                player5Bview.setText("ajouter joueur");
             }else{
-                player4Bview.setText("ajouter joueur");
+                final String finalTeamB = teamB;
+                final String finalTeamAname = teamA;
+                final String finalTeamBname = teamB;
+                player4Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                        intent.putExtra("teamName", finalTeamB);
+                        intent.putExtra("teamNameA", finalTeamAname);
+                        intent.putExtra("teamNameB", finalTeamBname);
+                        startActivity(intent);
+                    }
+                });
+                //player4Bview.setText("ajouter joueur");
             }
             if (myPlayersB.size()-1==4) {
+                player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
+                player2Bview.setText(myPlayersB.get(1).getName());
+                player3Bview.setText(myPlayersB.get(2).getName());
+                player4Bview.setText(myPlayersB.get(3).getName());
                 player5Bview.setText(myPlayersB.get(4).getName());
             }else{
-                player5Bview.setText("ajouter joueur");
+                final String finalTeamB = teamB;
+                final String finalTeamAname = teamA;
+                final String finalTeamBname = teamB;
+                player5Bview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                        intent.putExtra("teamName", finalTeamB);
+                        intent.putExtra("teamNameA", finalTeamAname);
+                        intent.putExtra("teamNameB", finalTeamBname);
+                        startActivity(intent);
+                    }
+                });
+                //player5Bview.setText("ajouter joueur");
             }
         }else{ // if no player at all
             player1Bview.setText("ajouter joueur");
+            final String finalTeamB = teamB;
+            final String finalTeamAname = teamA;
+            final String finalTeamBname = teamB;
+            player1Bview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(teamView.this,PlayerActivity.class);
+                    intent.putExtra("teamName", finalTeamB);
+                    intent.putExtra("teamNameA", finalTeamAname);
+                    intent.putExtra("teamNameB", finalTeamBname);
+                    startActivity(intent);
+                }
+            });
             player2Bview.setText("");
             player3Bview.setText("");
             player4Bview.setText("");
