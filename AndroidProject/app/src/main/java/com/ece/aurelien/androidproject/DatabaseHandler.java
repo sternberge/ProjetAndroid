@@ -42,7 +42,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
     //Table Match
-    public static final String MATCH_TEAM_A = "team_A";
+                    public static final String MATCH_TEAM_A = "team_A";
     public static final String MATCH_TEAM_B = "team_B";
     public static final String MATCH_RESULT_A = "result_A";
     public static final String MATCH_RESULT_B = "result_B";
@@ -63,9 +63,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     MATCH_LOCATION_LONGITUDE + " DOUBLE, " +
                     MATCH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     MATCH_DATE + " TEXT) " ;//+
-                    //"FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
-                    //"FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
+    //"FOREIGN KEY(" + MATCH_TEAM_B + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
+    //"FOREIGN KEY(" + MATCH_TEAM_A + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
 
+    //Table Score
+    public static final String SCORE_MATCH = "match";
+    public static final String SCORE_PLAYER = "player";
+    public static final String SCORE_POINT = "point";
+    public static final String SCORE_DECISIVE = "decisive";
+    public static final String SCORE_REBOUND = "rebound";
+    public static final String SCORE_COUNTER = "counter";
+    public static final String SCORE_MINPLAY = "minutePlay";
+    public static final String SCORE_ID = "id";
+
+    public static final String SCORE_TABLE_NAME = "Match";
+
+    public static final String SCORE_TABLE_CREATE =
+            "CREATE TABLE " + SCORE_TABLE_NAME + " (" +
+                    SCORE_MATCH + " TEXT, " +
+                    SCORE_PLAYER + " TEXT, " +
+                    SCORE_POINT + " INTEGER NOT NULL, " +
+                    SCORE_DECISIVE + " INTEGER NOT NULL, " +
+                    SCORE_REBOUND + " INTEGER NOT NULL, " +
+                    SCORE_COUNTER + " INTEGER NOT NULL, " +
+                    SCORE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    SCORE_MINPLAY + " INTEGER NOT NULL) " ;//+
+    //"FOREIGN KEY(" + SCORE_PLAYER + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + ")," +
+    //"FOREIGN KEY(" + SCORE_MATCH + ") REFERENCES " + TEAM_TABLE_NAME + "(" + TEAM_NAME + "));";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -84,6 +108,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL(TEAM_TABLE_CREATE);
         db.execSQL(PLAYER_TABLE_CREATE);
         db.execSQL(MATCH_TABLE_CREATE);
+        db.execSQL(SCORE_TABLE_CREATE);
     }
 
     @Override
@@ -92,6 +117,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TEAM_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + PLAYER_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + MATCH_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + SCORE_TABLE_NAME);
 
         // create new tables
         onCreate(db);
