@@ -24,7 +24,7 @@ public class teamView extends AppCompatActivity {
         setContentView(R.layout.teams_composition);
         String teamA = null;
         String teamB = null;
-        TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
+        final TextView teamAview,teamBview,player1Aview,player2Aview,player3Aview,player4Aview,player5Aview,player1Bview,player2Bview,player3Bview,player4Bview,player5Bview;
         PlayerDAO playerDAO;
         Bundle data = getIntent().getExtras();
         if (data!= null) {
@@ -62,10 +62,20 @@ public class teamView extends AppCompatActivity {
                 player3Aview.setText("");
                 player4Aview.setText("");
                 player5Aview.setText("");
+                /*final String finalTeamA1 = teamA;
+                player1Aview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(teamView.this,ScoreView.class);
+                        intent.putExtra("teamName", finalTeamA1);
+                        intent.putExtra("playerName",player1Aview.getText() );
+                        startActivity(intent);
+                    }
+                });*/
             }else { // if only one player
                  player1Aview.setText("ajouter joueur");
             }
-            if (myPlayersA.size()-1==1) {
+            if (myPlayersA.size()-1>0) {
                 player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText("ajouter joueur");
@@ -87,7 +97,7 @@ public class teamView extends AppCompatActivity {
                     }
                 });
             }
-            if (myPlayersA.size()-1==2) {
+            if (myPlayersA.size()-1>1) {
                 player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText(myPlayersA.get(2).getName());
@@ -109,7 +119,7 @@ public class teamView extends AppCompatActivity {
                 });
                 //player3Aview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
             }
-            if (myPlayersA.size()-1==3) {
+            if (myPlayersA.size()-1>2) {
                 player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText(myPlayersA.get(2).getName());
@@ -131,7 +141,7 @@ public class teamView extends AppCompatActivity {
                 });
                 //player4Aview.setText("ajouter joueur");
             }
-            if (myPlayersA.size()-1==4) {
+            if (myPlayersA.size()-1>3) {
                 player1Aview.setText(myPlayersA.get(0).getName());// need to recal dont know why
                 player2Aview.setText(myPlayersA.get(1).getName());
                 player3Aview.setText(myPlayersA.get(2).getName());
@@ -188,7 +198,7 @@ public class teamView extends AppCompatActivity {
             }else { // if only one player
                 player1Bview.setText("ajouter joueur");
             }
-            if (myPlayersB.size()-1==1) {
+            if (myPlayersB.size()-1>0) {
                 player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText("ajouter joueur");
@@ -210,7 +220,7 @@ public class teamView extends AppCompatActivity {
                     }
                 });
             }
-            if (myPlayersB.size()-1==2) {
+            if (myPlayersB.size()-1>1) {
                 player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText(myPlayersB.get(2).getName());
@@ -232,7 +242,7 @@ public class teamView extends AppCompatActivity {
                 });
                 //player3Bview.setText("ajouter joueur"); // send to if part //// TODO: 08/04/2017
             }
-            if (myPlayersB.size()-1==3) {
+            if (myPlayersB.size()-1>2) {
                 player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText(myPlayersB.get(2).getName());
@@ -254,7 +264,7 @@ public class teamView extends AppCompatActivity {
                 });
                 //player4Bview.setText("ajouter joueur");
             }
-            if (myPlayersB.size()-1==4) {
+            if (myPlayersB.size()-1>3) {
                 player1Bview.setText(myPlayersB.get(0).getName());// need to recal dont know why
                 player2Bview.setText(myPlayersB.get(1).getName());
                 player3Bview.setText(myPlayersB.get(2).getName());
