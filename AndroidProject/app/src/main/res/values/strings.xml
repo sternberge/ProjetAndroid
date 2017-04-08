@@ -3,4 +3,5 @@
     <string name="Mainview">Matchs</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps_activityfor_main">Map</string>
+    <string name="google_maps_key">AIzaSyDz3GRDXVajLbMI7wTxbqkhKIrlYnOkI0M</string>
 </resources>
