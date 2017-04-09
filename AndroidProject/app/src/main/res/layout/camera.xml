@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:text="Button"
+        android:text="Take picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button10" />
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@color/cast_intro_overlay_button_background_color"
         android:id="@+id/imageView"
-        android:minHeight="168dp"
-        android:minWidth="300dp"
+        android:minHeight="300dp"
+        android:minWidth="350dp"
         tools:minHeight="178dp" />
 </LinearLayout>
