@@ -60,10 +60,10 @@ public class MapsActivityforMain extends FragmentActivity implements OnMapReadyC
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(Double.valueOf(latitude),Double.valueOf(longitude));
-        mMap.addMarker(new MarkerOptions().position(sydney).title("match was here"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+      
+        LatLng position = new LatLng(Double.valueOf(latitude),Double.valueOf(longitude));
+        mMap.addMarker(new MarkerOptions().position(position).title("match was here"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
     }
 
 }
