@@ -103,7 +103,8 @@ public class MatchView extends AppCompatActivity {
             @Override
                     public void onClick(View v){
             DialogFragment picker = new DatePickerFragment();
-            picker.show(getFragmentManager(), "datePicker");}
+            picker.show(getFragmentManager(), "datePicker");
+            }
         });
 
 

@@ -19,6 +19,7 @@
     <string name="backbutton">back</string>
     <string name="chooseDate">choose Date</string>
     <string name="saveMatch">save Match</string>
+    <string name="noMatch">No match in database</string>
 
     <string name="teamSuccess">Registration of the team success</string>
     <string name="scoreSuccess">Registration of the score success</string>

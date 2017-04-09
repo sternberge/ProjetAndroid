@@ -82,6 +82,8 @@ public class ScoreView extends AppCompatActivity {
                     intent.putExtra("matchID",matchID);
                     intent.putExtra("playerName",playerName);
                     intent.putExtra("teamName",teamName);
+                    intent.putExtra("teamASend", teamAName);
+                    intent.putExtra("teamBSend",teamBName);
                     startActivity(intent);
                 }
             });

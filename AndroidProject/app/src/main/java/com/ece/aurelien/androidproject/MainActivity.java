@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             });
             i--;
         }else {
-            matchTwoTeamOne.setText("Pas de match en BDD");
+            matchTwoTeamOne.setText(R.string.noMatch);
         }
         if (i>=0) {
             matchThreeTeamOne.setText(myMatch.get(i).getTeamA());
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             });
             i--;
         }else {
-            matchThreeTeamOne.setText("Pas de match en BDD");
+            matchThreeTeamOne.setText(R.string.noMatch);
         }
         if (i>=0) {
             matchFourTeamOne.setText(myMatch.get(i).getTeamA());
@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
             });
             i--;
         }else {
-            matchFourTeamOne.setText("Pas de match en BDD");
+            matchFourTeamOne.setText(R.string.noMatch);
         }
         if (i>=0) {
             matchFiveTeamOne.setText(myMatch.get(i).getTeamA());
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }else {
-            matchFiveTeamOne.setText("Pas de match en BDD");
+            matchFiveTeamOne.setText(R.string.noMatch);
         }
         //
 

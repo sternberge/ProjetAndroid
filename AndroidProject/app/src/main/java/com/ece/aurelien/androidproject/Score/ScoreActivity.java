@@ -21,7 +21,7 @@ public class ScoreActivity extends AppCompatActivity {
     Button save;
     String matchID;
     String playerName;
-    String teamName;
+    String teamName,teamA,teamB;
     int pointint,decisiveint,reboundint,counterint,interceptionint,minuteplayint;
     Context context =  this;
     @Override
@@ -34,6 +34,8 @@ public class ScoreActivity extends AppCompatActivity {
             matchID = data.getString("matchID");
             playerName = data.getString("playerName");
             teamName = data.getString("teamName");
+            teamA = data.getString("teamASend");
+            teamB = data.getString("teamBSend");
         }
 
         pointET = (EditText) findViewById(R.id.pointET);
@@ -69,6 +71,8 @@ public class ScoreActivity extends AppCompatActivity {
                 intent.putExtra("matchID",matchID);
                 intent.putExtra("playerName",playerName);
                 intent.putExtra("teamName",teamName);
+                intent.putExtra("teamAName", teamA);
+                intent.putExtra("teamBName",teamB);
                 startActivity(intent);
             }
         });

@@ -76,7 +76,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="57dp"
-        android:layout_weight="0.27"
+        android:layout_weight="0.50"
         android:background="@android:drawable/alert_light_frame">
 
         <Button

@@ -33,8 +33,8 @@ public class MapsActivityforMain extends FragmentActivity implements OnMapReadyC
             latitude = data.getString("latitudeSee");
             longitude = data.getString("longitudeSee");
         }
-        Button back = (Button) findViewById(R.id.backbutton);
-        back.setText(R.string.backButton);
+        Button back = (Button) findViewById(R.id.backButton);
+        back.setText(R.string.backbutton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
