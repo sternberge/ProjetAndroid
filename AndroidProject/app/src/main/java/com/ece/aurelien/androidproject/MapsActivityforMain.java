@@ -60,7 +60,7 @@ public class MapsActivityforMain extends FragmentActivity implements OnMapReadyC
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-      
+
         LatLng position = new LatLng(Double.valueOf(latitude),Double.valueOf(longitude));
         mMap.addMarker(new MarkerOptions().position(position).title("match was here"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
