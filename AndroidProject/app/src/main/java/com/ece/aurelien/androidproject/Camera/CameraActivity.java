@@ -1,12 +1,13 @@
 package com.ece.aurelien.androidproject.Camera;
 
+import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,6 @@ import com.ece.aurelien.androidproject.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -30,16 +30,19 @@ public class CameraActivity extends AppCompatActivity{
     ImageView result;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private String mFileLocation = "";
-    File photoFile = null;
-
+    File photoFile;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        if (shouldAskPermissions()) {
+            askPermissions();
+        }
         setContentView(R.layout.camera);
         Button click = (Button)findViewById(R.id.button10);
         result = (ImageView) findViewById(R.id.imageView);
-
+        context = getApplicationContext();
         click.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -55,7 +58,7 @@ public class CameraActivity extends AppCompatActivity{
 
         //takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, FileProvider.getUriForFile(getApplicationContext(), "com.Camera.android.fileprovider",file));
 
-        File photoFile = null;
+       // File photoFile = null;
         try{
             photoFile = createImageFile();
         }
@@ -99,13 +102,32 @@ public class CameraActivity extends AppCompatActivity{
     File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFIleName = "IMAGE"+timeStamp+"_";
-        File storageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
-        File image = File.createTempFile(imageFIleName,".jpg",storageDirectory);
+
+        File storageDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);//Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        //File passToDirectory = new File(getExternalFilesDir(Environment.DIRECTORY_DCIM).toString()+ "/Camera");
+        //File storageDirectory = context.getDir(Environment.DIRECTORY_PICTURES,Context.MODE_PRIVATE);
+               File image = File.createTempFile(imageFIleName,".jpeg",storageDirectory);
+        //File image = new File(storageDirectory.toString() + "/Camera",imageFIleName + ".jpg");
         mFileLocation = image.getAbsolutePath();
 
-        return image;
+        return image.getAbsoluteFile();
     }
 
+
+    //////trying
+    protected boolean shouldAskPermissions() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    @TargetApi(23)
+    protected void askPermissions() {
+        String[] permissions = {
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE"
+        };
+        int requestCode = 200;
+        requestPermissions(permissions, requestCode);
+    }
     
 }
 
