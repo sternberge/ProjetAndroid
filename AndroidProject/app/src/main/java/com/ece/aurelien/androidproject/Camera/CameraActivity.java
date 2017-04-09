@@ -80,6 +80,8 @@ public class CameraActivity extends AppCompatActivity{
             try {
                 FileOutputStream out = new FileOutputStream(photoFile);
                 imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                // LA ligne pour enristrer l'imaage finalement
+                MediaStore.Images.Media.insertImage(getContentResolver(),imageBitmap,"Match","taken by App");
                 out.flush();
                 out.close();
             } catch (Exception e) {
